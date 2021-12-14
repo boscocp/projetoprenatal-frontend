@@ -1,4 +1,4 @@
-FROM node:14.17
+FROM node:latest as node
 
 ARG WORK_DIR=/frontend
 ENV PATH ${WORK_DIR}/node_modules/.bin:$PATH
@@ -9,7 +9,7 @@ WORKDIR ${WORK_DIR}
 COPY package.json ${WORK_DIR}
 COPY package-lock.json ${WORK_DIR}
 
-RUN npm install @angular/cli
+RUN npm install -g @angular/cli
 RUN npm install
 
 COPY . ${WORK_DIR}
