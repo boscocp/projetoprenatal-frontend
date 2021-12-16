@@ -11,6 +11,7 @@ COPY package-lock.json ${WORK_DIR}
 
 RUN npm install -g @angular/cli
 RUN npm install
+RUN npm install bootstrap
 
 COPY . ${WORK_DIR}
 
