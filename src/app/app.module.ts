@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RegisterComponent } from './register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
