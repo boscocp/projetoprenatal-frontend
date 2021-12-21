@@ -23,6 +23,18 @@ export interface Medic {
   crm: string;
 }
 
+export interface Patient {
+  person: Person;
+  user: User;
+  occupation: string;
+  kinship: boolean;
+}
+
+export interface PatientRegister {
+  patient: Patient;
+  address: Address;
+}
+
 export interface MedicRegister {
   medic: Medic;
   address: Address;

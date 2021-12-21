@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import { FormGroup, Validators, FormControl} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {Medic, Address, Person, User, MedicRegister} from './interfaces';
+import {Medic, Address, Person, User, MedicRegister} from '../shared/interfaces';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,6 @@ import {Medic, Address, Person, User, MedicRegister} from './interfaces';
 export class RegisterComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router
     ) { }
@@ -20,7 +19,6 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
 
   ngOnInit(): void {
-    console.log("teste iniciou");
     this.form = new FormGroup({
       name: new FormControl('Cassia Pereira', Validators.maxLength(200)),
       email: new FormControl('voce@gmail.com', Validators.email),
@@ -35,7 +33,6 @@ export class RegisterComponent implements OnInit {
   }
 
   getMedic(): MedicRegister {
-    console.log("teste teste medic");
     let person : Person = {
       name: this.form.get('name')?.value,
       cpf: this.form.get('cpf')?.value,
@@ -66,14 +63,10 @@ export class RegisterComponent implements OnInit {
       address: address
     }
 
-    console.log(medicsingup);
-
     return medicsingup;
   }
 
   onSubmit(): void {
-    console.log("submit");
-    this.getMedic();
     this.http.post('http://localhost:1024/user/singup/', this.getMedic())
       .subscribe(() => this.router.navigate(['/login']));
   }

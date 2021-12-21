@@ -1,1 +1,107 @@
-<p>patient-create works!</p>
+<div class="container">
+  <h5>Inserir paciente</h5>
+  <!-- Form -->
+  <form [formGroup] = "form"  (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="patientRegisterFormName">Nome completo</label>
+      <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome" value="" required>
+      <div class="invalid-feedback">
+        Nome completo válido é requerido.
+      </div>
+    </div>
+
+    <!-- E-mail -->
+    <div class="form-group">
+      <label for="patientRegisterFormEmail">E-mail</label>
+      <input formControlName="email" type="email" class="form-control" id="email" placeholder="paciente@email.com" value="" required>
+      <div class="invalid-feedback">
+        Email completo válido é requerido.
+      </div>
+    </div>
+    <div class="form-row">
+      <!-- Data de nascimento -->
+      <div class="form-group col-md-8">
+        <label for="birt_date" class="form-label">Data de nascimento </label>
+        <input formControlName="birt_date" type="date" class="form-control" id="birt_date" required>
+        <div class="invalid-feedback">
+          Por favor insira a sua data de nascimento.
+        </div>
+      </div>
+
+      <!-- Senha -->
+      <div class="form-group col-md-8">
+        <label for="phone-number" class="form-label"> Senha </label>
+        <input formControlName="password" type="password" class="form-control" placeholder="Password" required>
+        <div class="invalid-feedback">
+          Por favor insira senha do paciente.
+        </div>
+      </div>
+    </div>
+
+    <!-- CPF -->
+    <div class="form-group">
+      <label for="patientRegisterFormCPF">CPF</label>
+      <input formControlName="cpf" type="text" id="patientRegisterFormCPF" class="form-control" required>
+      <div class="invalid-feedback">
+        Por favor insira o seu CPF.
+      </div>
+    </div>
+
+    <!-- Estado civil -->
+    <div class="form-group">
+      <label  class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Estado civil</label>
+      <select formControlName="civil_state" class="form-control" id="inlineFormCustomSelect">
+        <option selected>Escolher...</option>
+        <option value="S">Solteira</option>
+        <option value="M">Casada</option>
+        <option value="D">Divorciada</option>
+      </select>
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+      <label for="patientRegisterFormAddress">Endereço</label>
+      <input formControlName="address" type="text" id="patientRegisterFormAddress" class="form-control" required>
+      <div class="invalid-feedback">
+        Por favor insira seu endereço.
+      </div>
+    </div>
+
+    <!-- Number -->
+    <div class="form-group col-md-4">
+      <label for="materialRegisterFormNumber">Número</label>
+      <input formControlName="number" type="text" id="materialRegisterFormNumber" class="form-control" required>
+      <div class="invalid-feedback">
+        Number code required.
+      </div>
+    </div>
+
+    <!-- Zip -->
+    <div class="form-group col-md-6">
+      <label for="materialRegisterFormZip">CEP</label>
+      <input formControlName="zipcode" type="text" id="materialRegisterFormZip" class="form-control" required>
+      <div class="invalid-feedback">
+        Zip code required.
+      </div>
+    </div>
+
+    <!-- Kinship -->
+    <div class="custom-control custom-checkbox">
+      <input [checked]="kinship" formControlName="kinship" type="checkbox" id="registerFormKinship" class="form-check-input">
+      <label class="form-check-label" for="registerFormKinship">Parentesco</label>
+    </div>
+
+    <!-- Occupation -->
+    <div class="form-group col-md-6">
+      <label for="materialRegisterFormOccupation">Ocupacão</label>
+      <input formControlName="occupation" type="text" id="materialRegisterFormOccupation" class="form-control" required>
+      <div class="invalid-feedback">
+        Ocupação requerida.
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit"> Cadastrar Paciente </button>
+  </form>
+  <!-- Form -->
+</div>

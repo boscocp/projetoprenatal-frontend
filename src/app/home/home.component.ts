@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Emitters } from '../emitters/emitters';
-// import {Emitters} from '../emitters/emitters';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +9,19 @@ import { Emitters } from '../emitters/emitters';
 })
 export class HomeComponent implements OnInit {
   message = '';
+  authenticated = false;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    Emitters.authEmitter.subscribe(
+      (auth: boolean) => {
+        this.authenticated = auth;
+      }
+    );
+
     this.http.get('http://localhost:1024/user/person/', {withCredentials: true}).subscribe(
       (res: any) => {
-        this.message = `Hi ${res.name}`;
+        this.message = `Olá ${res.name}`;
         Emitters.authEmitter.emit(true);
       },
       err => {
