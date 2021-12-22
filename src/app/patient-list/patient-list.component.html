@@ -1,0 +1,21 @@
+<div class="container">
+  <h5>Pacientes</h5>
+  <hr class="my-4">
+
+  <table class="table">
+    <thead>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data de nascimento</th>
+       <!--  <th>e-mail</th> -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patients" >
+            <td>{{patient.name}}</td>
+            <td>{{patient.cpf}}</td>
+            <td>{{patient.birt_date}}</td>
+            <!-- <td>{{patient.email}}</td> -->
+        </tr>
+    </tbody>
+  </table>
+</div>

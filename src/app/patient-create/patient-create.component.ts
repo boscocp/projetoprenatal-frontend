@@ -72,8 +72,9 @@ export class PatientCreateComponent implements OnInit {
 
   onSubmit(): void {
     this.http.post('http://localhost:1024/user/patient/', this.getPatient(), {withCredentials: true})
-      .subscribe((res: any) => { console.log(res)},
-      );
+      .subscribe((res: any) => { console.log(res),
+        this.router.navigate(['/'])
+      });
   }
 
 }

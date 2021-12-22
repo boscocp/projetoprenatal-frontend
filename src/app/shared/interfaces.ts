@@ -35,6 +35,13 @@ export interface PatientRegister {
   address: Address;
 }
 
+export interface PatientDTO {
+  name: string;
+  cpf: string;
+  birt_date: string;
+  email: string;
+}
+
 export interface MedicRegister {
   medic: Medic;
   address: Address;
