@@ -12,7 +12,7 @@ export class PatientDetailComponent implements OnInit {
   patient: Patient | undefined;
   address!: Address;
   addresses: Address[]=[];
-  id: Number = 1;
+  id: number = 1;
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient

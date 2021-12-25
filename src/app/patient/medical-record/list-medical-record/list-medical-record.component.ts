@@ -10,7 +10,7 @@ import { PatientService } from '../../patient-service';
 export class ListMedicalRecordComponent implements OnInit {
   appointments: Appointment[]=[];
   constructor(private patientService: PatientService) { }
-  @Input() id: number = 1;
+  @Input() id!: number;
   ngOnInit(): void {
     this.callAppointments();
   }
