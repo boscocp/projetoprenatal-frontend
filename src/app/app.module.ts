@@ -12,6 +12,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RegisterComponent } from './register/register.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientDetailComponent } from './patient/patient-detail/patient-detail.component';
+import { CreateMedicalRecordComponent } from './patient/medical-record/create-medical-record/create-medical-record.component';
+import { ListMedicalRecordComponent } from './patient/medical-record/list-medical-record/list-medical-record.component';
+import { MedicalRecordDetailComponent } from './patient/medical-record/medical-record-detail/medical-record-detail.component';
+import { PatientModule } from './patient/patient.module';
 
 @NgModule({
   declarations: [
@@ -21,14 +26,17 @@ import { PatientListComponent } from './patient-list/patient-list.component';
     NavigationComponent,
     RegisterComponent,
     PatientCreateComponent,
-    PatientListComponent
+    PatientListComponent,
+    PatientDetailComponent,
+    CreateMedicalRecordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PatientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

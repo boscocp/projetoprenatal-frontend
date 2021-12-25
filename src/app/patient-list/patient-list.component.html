@@ -1,8 +1,9 @@
+<p *ngIf="!patients"><em>Loading...</em></p>
 <div class="container">
   <h5>Pacientes</h5>
   <hr class="my-4">
 
-  <table class="table">
+  <table class="table table-hover table-striped" *ngIf="patients">
     <thead>
         <th>Nome</th>
         <th>CPF</th>
@@ -11,7 +12,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let patient of patients" >
-            <td>{{patient.name}}</td>
+            <td routerLink="/detail/{{patient.id}}">{{patient.name}}</td>
             <td>{{patient.cpf}}</td>
             <td>{{patient.birt_date}}</td>
             <!-- <td>{{patient.email}}</td> -->

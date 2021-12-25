@@ -1,0 +1,32 @@
+
+<p *ngIf="!rows"><em>Carregando...</em></p>
+<div class="container">
+  <h5>Consultas</h5>
+  <hr class="my-4">
+
+  <table class="table table-hover table-striped" *ngIf="rows">
+    <thead>
+        <th>Peso</th>
+        <th>Dia</th>
+        <th>IG</th>
+        <th>PA</th>
+        <th>Edema</th>
+        <th>AU</th>
+        <th>BCF</th>
+        <th>CD</th>
+       <!--  <th>e-mail</th> -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let appointment of rows" >
+          <td>{{appointment.weight}}</td>
+          <td>{{appointment.date}}</td>
+          <td>{{appointment.ig}}</td>
+          <td>{{appointment.pa}}</td>
+          <td>{{appointment.edema}}</td>
+          <td>{{appointment.av}}</td>
+          <td>{{appointment.bcf}}</td>
+          <td>{{appointment.cd}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

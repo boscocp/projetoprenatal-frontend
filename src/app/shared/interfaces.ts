@@ -36,6 +36,7 @@ export interface PatientRegister {
 }
 
 export interface PatientDTO {
+  id: string;
   name: string;
   cpf: string;
   birt_date: string;
