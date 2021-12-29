@@ -16,7 +16,7 @@ export class ListMedicalRecordComponent implements OnInit {
   }
 
   callAppointments() {
-    this.patientService.appointmentById(this.id).subscribe(appointments => {
+    this.patientService.appointmentsByPatientId(this.id).subscribe(appointments => {
       this.appointments = appointments;
       console.log(appointments)
     }, error => console.log(error));

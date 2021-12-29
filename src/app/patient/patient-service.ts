@@ -8,8 +8,10 @@ export class PatientService {
   url = environment.url;
   constructor(private http: HttpClient) { }
 
-  appointmentById(id: Number) {
-    return this.http.get<Appointment[]>(this.url + '/user/appointment/'+id,{withCredentials: true});
+  appointmentsByPatientId(id: Number) {
+    return this.http.get<Appointment[]>(this.url + '/user/appointments/'+id,{withCredentials: true});
   }
-
+  appointmentById(id: Number) {
+    return this.http.get<Appointment>(this.url + '/user/appointment/'+id,{withCredentials: true});
+  }
 }

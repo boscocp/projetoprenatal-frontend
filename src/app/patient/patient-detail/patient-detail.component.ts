@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
 import { Address, Patient } from 'src/app/shared/interfaces';
 
 @Component({
@@ -9,7 +10,7 @@ import { Address, Patient } from 'src/app/shared/interfaces';
   styleUrls: ['./patient-detail.component.css']
 })
 export class PatientDetailComponent implements OnInit {
-  patient: Patient | undefined;
+  patient!: Patient;
   address!: Address;
   addresses: Address[]=[];
   id: number = 1;
@@ -26,7 +27,7 @@ export class PatientDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.id = id;
     this.http.get<Patient>('http://localhost:1024/user/patient/'+id, {withCredentials: true})
-    .subscribe((res: Patient) => {this.patient = res
+    .subscribe((res: Patient) => {this.patient = res;
     });
 
     this.http.get<Address[]>('http://localhost:1024/user/address/'+id, {withCredentials: true})

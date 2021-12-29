@@ -1,4 +1,3 @@
-
 <p *ngIf="!rows"><em>Carregando...</em></p>
 <div class="container">
   <h5>Consultas</h5>
@@ -19,7 +18,7 @@
     <tbody>
         <tr *ngFor="let appointment of rows" >
           <td>{{appointment.weight}}</td>
-          <td>{{appointment.date}}</td>
+          <td routerLink="/appointment/detail/{{appointment.id}}">{{appointment.date}}</td>
           <td>{{appointment.ig}}</td>
           <td>{{appointment.pa}}</td>
           <td>{{appointment.edema}}</td>

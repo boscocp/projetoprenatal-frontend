@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { Patient } from 'src/app/shared/interfaces';
 import { Appointment } from '../../ipatient';
 import { PatientService } from '../../patient-service';
@@ -9,13 +10,13 @@ import { PatientService } from '../../patient-service';
   styleUrls: ['./medical-record-detail.component.css']
 })
 export class MedicalRecordDetailComponent implements OnInit {
-  @Output() onSelect = new EventEmitter<Appointment[]>();
-  @Input() id: number = 1;
-
+  appointment!: Appointment;
+  name: string="";
+  id: number = 1;
   constructor(private patientService: PatientService) { }
 
   ngOnInit(): void {
-    this.patientService.appointmentById(this.id).subscribe(appointment => this.onSelect.emit(appointment));
+    this.patientService.appointmentById(this.id).subscribe(appointment => {this.appointment = appointment});
   }
 
 }
