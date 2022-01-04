@@ -7,13 +7,21 @@ import { AppointmentsComponent } from './medical-record/list-medical-record/appo
 import { ListMedicalRecordComponent } from './medical-record/list-medical-record/list-medical-record.component';
 import { RouterModule } from '@angular/router';
 import { SelectAppointmentComponent } from './medical-record/select-appointment/select-appointment.component';
+import { PatientComponent } from './patient.component';
+import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientCreateComponent } from './patient-create/patient-create.component';
 
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
     AppointmentsComponent,
     ListMedicalRecordComponent,
-    SelectAppointmentComponent
+    SelectAppointmentComponent,
+    PatientDetailComponent,
+    PatientListComponent,
+    PatientCreateComponent,
+    PatientComponent
   ],
   imports: [
     CommonModule,
@@ -23,8 +31,7 @@ import { SelectAppointmentComponent } from './medical-record/select-appointment/
     RouterModule
   ],
   exports: [
-    MedicalRecordDetailComponent,
-    ListMedicalRecordComponent
+    PatientComponent
   ]
 })
 export class PatientModule { }

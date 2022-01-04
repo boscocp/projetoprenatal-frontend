@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {Medic, Address, Person, User, MedicRegister} from '../shared/interfaces';
+import {Medic, Address, Person, User, MedicRegister} from '../../shared/interfaces';
 
 @Component({
   selector: 'app-register',

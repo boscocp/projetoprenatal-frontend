@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient, PatientDTO } from '../shared/interfaces';
+import { Patient, PatientDTO } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-patient-list',

@@ -5,7 +5,7 @@
     <div> <label for="patient-name">Nome: {{patient.person.name}} </label> </div>
     <div> <label for="patient-email">email: {{patient.user.email}} </label> </div>
     <div> <label for="patient-email">CPF: {{patient.person.cpf}} </label> </div>
-    <div> <label for="patient-birt_date">Nascimento: {{patient.person.birt_date}} </label> </div>
+    <div> <label for="patient-birt_date">Nascimento: {{patient.person.birt_date | date}} </label> </div>
     <div> <label for="patient-occupation">Ocupação: {{patient.occupation}} </label> </div>
     <div> <label for="patient-kinship">Parentesco: {{patient.kinship}} </label> </div>
     <hr class="my-4">
