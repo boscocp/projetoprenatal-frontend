@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient, PatientRegister, Address, User, Person } from '../../shared/interfaces';
+import { PatientService } from '../patient-service';
 
 @Component({
   selector: 'app-patient-create',
@@ -14,7 +15,8 @@ export class PatientCreateComponent implements OnInit {
   kinship: boolean = false;
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private patientService: PatientService
   ) { }
 
   ngOnInit(): void {
@@ -65,14 +67,12 @@ export class PatientCreateComponent implements OnInit {
       address: address
     }
 
-    console.log(patientRegister);
-
     return patientRegister;
   }
 
   onSubmit(): void {
-    this.http.post('http://localhost:1024/user/patient/', this.getPatient(), {withCredentials: true})
-      .subscribe((res: any) => { console.log(res),
+    this.patientService.createPatient(this.getPatient())
+      .subscribe((res: any) => {
         this.router.navigate(['/'])
       });
   }

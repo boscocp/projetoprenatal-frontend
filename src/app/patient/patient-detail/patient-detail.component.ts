@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Emitters } from 'src/app/emitters/emitters';
 import { Address, Patient } from 'src/app/shared/interfaces';
+import { PatientService } from '../patient-service';
 
 @Component({
   selector: 'app-patient-detail',
@@ -16,7 +17,8 @@ export class PatientDetailComponent implements OnInit {
   id: number = 1;
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private patientService: PatientService
   ) { }
 
   ngOnInit(): void {
@@ -26,11 +28,11 @@ export class PatientDetailComponent implements OnInit {
   getPatient(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.id = id;
-    this.http.get<Patient>('http://localhost:1024/user/patient/'+id, {withCredentials: true})
+    this.patientService.getPatient(id)
     .subscribe((res: Patient) => {this.patient = res;
     });
 
-    this.http.get<Address[]>('http://localhost:1024/user/address/'+id, {withCredentials: true})
+    this.patientService.getAddress(id)
     .subscribe((res: Address[]) => {
       this.addresses = res,
       this.address = res[0]

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Patient, PatientDTO } from '../../shared/interfaces';
+import { PatientService } from '../patient-service';
 
 @Component({
   selector: 'app-patient-list',
@@ -12,13 +13,13 @@ export class PatientListComponent implements OnInit {
   patients: PatientDTO[] = [];
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private patientService: PatientService
     ) { }
 
   ngOnInit(): void {
-    this.http.get<PatientDTO[]>('http://localhost:1024/user/patient/0', {withCredentials: true})
-      .subscribe((res: PatientDTO[]) => {this.patients = res,
-        console.log(this.patients)
+    this.patientService.getPatients()
+      .subscribe((res: PatientDTO[]) => {this.patients = res
       });
   }
 

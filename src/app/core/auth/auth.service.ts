@@ -18,7 +18,6 @@ export class AuthService {
      {email, password},
      {withCredentials: true}
     ).pipe(tap( (res : any) => {
-      console.log(res);
       this.userService.setToken(res.email, res.userName, res.tipo);
     }));
   }

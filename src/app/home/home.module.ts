@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { PatientModule } from '../patient/patient.module';
+import { VmessageModule } from '../shared/vmessage/vmessage.module';
 
 
 
@@ -20,7 +21,8 @@ import { PatientModule } from '../patient/patient.module';
     ReactiveFormsModule,
     RouterModule,
     FormsModule,
-    PatientModule
+    PatientModule,
+    VmessageModule
   ]
 })
 export class HomeModule { }
