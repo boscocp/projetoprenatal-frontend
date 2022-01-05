@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Emitters } from '../emitters/emitters';
+import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { TokenService } from '../core/token/token.service';
 
 @Component({
   selector: 'app-home',
@@ -9,26 +8,22 @@ import { Emitters } from '../emitters/emitters';
 })
 export class HomeComponent implements OnInit {
   message = '';
-  authenticated = false;
-  constructor(private http: HttpClient) { }
+  authenticated: boolean = false;
+  constructor(
+    private tokenService: TokenService
+    ) { }
+
+  needReload() {
+    window.location.reload();
+  }
 
   ngOnInit(): void {
-    Emitters.authEmitter.subscribe(
-      (auth: boolean) => {
-        this.authenticated = auth;
-      }
-    );
-
-    this.http.get('http://localhost:1024/user/person/', {withCredentials: true}).subscribe(
-      (res: any) => {
-        this.message = `Olá ${res.name}`;
-        Emitters.authEmitter.emit(true);
-      },
-      err => {
-        this.message = 'Por favor, faça o login ou registre-se =)';
-        Emitters.authEmitter.emit(false);
-      }
-    );
+    if (this.tokenService.hasToken()) {
+      this.authenticated = true;
+      this.message = 'Olá '.concat(this.tokenService.getUser());
+    } else {
+      this.message = 'Por favor, faça o login ou registre-se =)';
+    }
   }
 
 }

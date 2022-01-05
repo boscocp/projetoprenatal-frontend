@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   userNameInput!: ElementRef<HTMLInputElement>;
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private authService: AuthService,
     private platformDetectorService: PatformDetectorService
@@ -33,7 +32,10 @@ export class LoginComponent implements OnInit {
     const email = this.form.get('email')!.value;
     const password = this.form.get('password')!.value;
     this.authService.authenticate(email, password).subscribe(
-      () => this.router.navigate(['/']),
+      () => {
+
+        this.router.navigate(['/']).finally(() => window.location.reload());
+      },
       err => {
         console.log(err);
         this.form.reset();
@@ -43,5 +45,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
 }

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Emitters } from '../emitters/emitters';
+import { AfterViewInit, Component, OnInit,} from '@angular/core';
+import { TokenService } from '../core/token/token.service';
+import { UserService } from '../core/user/user.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,17 +9,13 @@ import { Emitters } from '../emitters/emitters';
 })
 export class NavigationComponent implements OnInit {
   authenticated = false;
-  constructor(private http: HttpClient) { }
+  constructor(private tokeService: TokenService, private userService: UserService) { }
 
   ngOnInit(): void {
-    Emitters.authEmitter.subscribe(
-      (auth: boolean) => {
-        this.authenticated = auth;
-      }
-    );
+    this.authenticated = this.tokeService.hasToken();
   }
   logout(): void {
-    this.http.post('http://localhost:1024/user/logout/', {}, {withCredentials: true}).subscribe(
-        () => {this.authenticated = false });
+    this.authenticated = false;
+    this.userService.logout();
   }
 }
