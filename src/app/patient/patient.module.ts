@@ -11,6 +11,9 @@ import { PatientComponent } from './patient.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table'
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { PatientCreateComponent } from './patient-create/patient-create.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    MatTabsModule,
+    MatTableModule
   ],
   exports: [
     PatientComponent
