@@ -1,105 +1,79 @@
-<div class="container">
-  <h5>Inserir paciente</h5>
+<div class="container mat-elevation-z4">
   <!-- Form -->
-  <form [formGroup] = "form"  (ngSubmit)="onSubmit()">
-    <!-- Name -->
-    <div class="form-group">
-      <label for="patientRegisterFormName">Nome completo</label>
-      <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome" value="" required>
-      <div class="invalid-feedback">
-        Nome completo válido é requerido.
-      </div>
-    </div>
+  <form [formGroup] = "form"  >
+    <p>
+      <!-- Name -->
+      <mat-form-field appearance="outline" style="width:100%; margin-top: 15px;">
+        <mat-label>Nome completo</mat-label>
+        <input formControlName="name" id="name" matInput placeholder="Fulano da Costa" required>
+      </mat-form-field>
+      <!-- E-mail -->
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" id="email" placeholder="paciente@email.com" type="email" matInput placeholder="Fulano da Costa" required>
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
 
-    <!-- E-mail -->
-    <div class="form-group">
-      <label for="patientRegisterFormEmail">E-mail</label>
-      <input formControlName="email" type="email" class="form-control" id="email" placeholder="paciente@email.com" value="" required>
-      <div class="invalid-feedback">
-        Email completo válido é requerido.
-      </div>
-    </div>
-    <div class="form-row">
-      <!-- Data de nascimento -->
-      <div class="form-group col-md-8">
-        <label for="birt_date" class="form-label">Data de nascimento </label>
-        <input formControlName="birt_date" type="date" class="form-control" id="birt_date" required>
-        <div class="invalid-feedback">
-          Por favor insira a sua data de nascimento.
-        </div>
-      </div>
-
-      <!-- Senha -->
-      <div class="form-group col-md-8">
-        <label for="phone-number" class="form-label"> Senha </label>
-        <input formControlName="password" type="password" class="form-control" placeholder="Password" required>
-        <div class="invalid-feedback">
-          Por favor insira senha do paciente.
-        </div>
-      </div>
+      <!-- Birth date -->
+      <mat-form-field appearance="outline" >
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput formControlName="birt_date" type="date" id="birt_date" required>
+      </mat-form-field>
+    </p>
+    <!-- password -->
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Senha do paciente</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
 
     <!-- CPF -->
-    <div class="form-group">
-      <label for="patientRegisterFormCPF">CPF</label>
-      <input formControlName="cpf" type="text" id="patientRegisterFormCPF" class="form-control" required>
-      <div class="invalid-feedback">
-        Por favor insira o seu CPF.
-      </div>
-    </div>
+    <mat-form-field appearance="outline" style="width:100%">
+      <mat-label>CPF</mat-label>
+      <input formControlName="cpf" id="patientRegisterFormCPF" matInput placeholder="Fulano da Costa" required>
+    </mat-form-field>
 
     <!-- Estado civil -->
-    <div class="form-group">
-      <label  class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Estado civil</label>
-      <select formControlName="civil_state" class="form-control" id="inlineFormCustomSelect">
-        <option selected>Escolher...</option>
-        <option value="S">Solteira</option>
-        <option value="M">Casada</option>
-        <option value="D">Divorciada</option>
-      </select>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado civil</mat-label>
+      <mat-select>
+        <mat-option value="S">Solteira</mat-option>
+        <mat-option value="M">Casada</mat-option>
+        <mat-option value="D">Divorciada</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <!-- Address -->
-    <div class="form-group">
-      <label for="patientRegisterFormAddress">Endereço</label>
-      <input formControlName="address" type="text" id="patientRegisterFormAddress" class="form-control" required>
-      <div class="invalid-feedback">
-        Por favor insira seu endereço.
-      </div>
+    <mat-form-field appearance="outline" style="width:100%">
+      <mat-label>Endereço</mat-label>
+      <input formControlName="address" matInput required>
+    </mat-form-field>
+
+    <div class="example-container">
+      <!-- Number -->
+      <mat-form-field appearance="outline" style="width:20%">
+        <mat-label>Número</mat-label>
+        <input formControlName="number" matInput required>
+      </mat-form-field>
+      <!-- Zip -->
+      <mat-form-field appearance="outline" style="width:20%">
+        <mat-label>CEP</mat-label>
+        <input formControlName="zipcode" matInput required>
+      </mat-form-field>
+      <!-- Occupation -->
+      <mat-form-field appearance="outline">
+        <mat-label>Ocupacão</mat-label>
+        <input formControlName="occupation" matInput required>
+      </mat-form-field>
     </div>
 
-    <!-- Number -->
-    <div class="form-group col-md-4">
-      <label for="materialRegisterFormNumber">Número</label>
-      <input formControlName="number" type="text" id="materialRegisterFormNumber" class="form-control" required>
-      <div class="invalid-feedback">
-        Number code required.
-      </div>
-    </div>
-
-    <!-- Zip -->
-    <div class="form-group col-md-6">
-      <label for="materialRegisterFormZip">CEP</label>
-      <input formControlName="zipcode" type="text" id="materialRegisterFormZip" class="form-control" required>
-      <div class="invalid-feedback">
-        Zip code required.
-      </div>
-    </div>
 
     <!-- Kinship -->
-    <div class="custom-control custom-checkbox">
-      <input [checked]="kinship" formControlName="kinship" type="checkbox" id="registerFormKinship" class="form-check-input">
-      <label class="form-check-label" for="registerFormKinship">Parentesco</label>
-    </div>
-
-    <!-- Occupation -->
-    <div class="form-group col-md-6">
-      <label for="materialRegisterFormOccupation">Ocupacão</label>
-      <input formControlName="occupation" type="text" id="materialRegisterFormOccupation" class="form-control" required>
-      <div class="invalid-feedback">
-        Ocupação requerida.
-      </div>
-    </div>
+    <p><mat-checkbox color= 'primary' formControlName="kinship">Parentesco</mat-checkbox></p>
 
     <button class="btn btn-primary" type="submit"> Cadastrar Paciente </button>
 

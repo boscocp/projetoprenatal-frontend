@@ -13,6 +13,7 @@ import { PatientService } from '../patient-service';
 export class PatientCreateComponent implements OnInit {
   form!: FormGroup;
   kinship: boolean = false;
+  hide = true;
   constructor(
     private http: HttpClient,
     private router: Router,

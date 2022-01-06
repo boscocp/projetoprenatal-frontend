@@ -12,4 +12,8 @@ export class PatientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onTabChanged(): void {
+    window.location.reload();
+  }
+
 }

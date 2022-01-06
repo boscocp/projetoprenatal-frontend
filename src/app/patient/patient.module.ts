@@ -18,7 +18,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { PatientDeleteComponent, PatientDeleteDialog } from './patient-delete/patient-delete.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
@@ -43,7 +46,11 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   exports: [
     PatientComponent
