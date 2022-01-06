@@ -13,6 +13,8 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table'
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { MatTableModule } from '@angular/material/table'
     HttpClientModule,
     RouterModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   exports: [
     PatientComponent

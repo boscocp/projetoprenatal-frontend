@@ -17,7 +17,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class PatientListComponent implements OnInit {
   patients: PatientDTO[] = [];
-  displayedColumns: string[] = ['name', 'cpf', 'birt_date'];
+  columnsToDisplay : string[] = ['name'];
   expandedElement!: Patient | null;
   constructor(
     private patientService: PatientService

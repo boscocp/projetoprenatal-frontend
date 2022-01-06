@@ -1,41 +1,42 @@
 <p *ngIf="!patients"><em>Loading...</em></p>
 <div class="container">
-  <h5>Pacientes</h5>
-  <hr class="my-4">
+  <table mat-table [dataSource]="patients"  multiTemplateDataRows class="mat-elevation-z8">
 
-  <table mat-table [dataSource]="patients" class="mat-elevation-z8">
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+      <th mat-header-cell *matHeaderCellDef> Paciente </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
 
-    <!-- Name Column -->
-    <ng-container  matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let patient"> {{patient.name}} </td>
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div >
+            <!--<div class="example-element-position"> {{element.name}} </div> class="example-element-diagram" -->
+            <div class="example-element-position"> CPF: {{element.cpf}} </div>
+            <div class="example-element-position"> E-mail: {{element.email}} </div>
+            <div class="example-element-position"> Nascimento: {{element.birt_date}} </div>
+          </div>
+          <div class="example-button-container">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </td>
     </ng-container>
-    <!-- CPF Column -->
-    <ng-container matColumnDef="cpf">
-      <th mat-header-cell *matHeaderCellDef> CPF </th>
-      <td mat-cell *matCellDef="let patient"> {{patient.cpf}} </td>
-    </ng-container>
-    <!-- birt_date Column -->
-    <ng-container matColumnDef="birt_date">
-      <th mat-header-cell *matHeaderCellDef> Data de nascimento </th>
-      <td mat-cell *matCellDef="let patient"> {{patient.birt_date}} </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    <!-- <thead>
-        <th>Nome</th>
-        <th>CPF</th>
-        <th>Data de nascimento</th>
-        <th>e-mail</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let patient of patients" >
-            <td routerLink="/detail/{{patient.id}}">{{patient.name}}</td>
-            <td>{{patient.cpf}}</td>
-            <td>{{patient.birt_date}}</td>
-            <td>{{patient.email}}</td>
-        </tr>
-    </tbody>-->
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
   </table>
 </div>
