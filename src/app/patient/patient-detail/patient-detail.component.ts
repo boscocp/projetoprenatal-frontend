@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Emitters } from 'src/app/emitters/emitters';
 import { Address, Patient } from 'src/app/shared/interfaces';
 import { PatientService } from '../patient-service';
 
@@ -17,7 +15,6 @@ export class PatientDetailComponent implements OnInit {
   id: number = 1;
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
     private patientService: PatientService
   ) { }
 

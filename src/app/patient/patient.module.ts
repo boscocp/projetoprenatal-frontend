@@ -15,7 +15,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table'
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
+import { PatientDeleteComponent, PatientDeleteDialog } from './patient-delete/patient-delete.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MatIconModule} from '@angular/material/icon';
     PatientDetailComponent,
     PatientListComponent,
     PatientCreateComponent,
-    PatientComponent
+    PatientComponent,
+    PatientDeleteComponent,
+    PatientDeleteDialog
   ],
   imports: [
     CommonModule,
@@ -38,6 +42,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
+    MatInputModule
   ],
   exports: [
     PatientComponent

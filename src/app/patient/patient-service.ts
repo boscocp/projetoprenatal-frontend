@@ -31,4 +31,8 @@ export class PatientService {
   getAddress(id: Number) {
     return this.http.get<Address[]>(this.url + '/user/address/'+id, {withCredentials: true});
   }
+
+  deletePatient(id: Number) {
+    return this.http.delete(this.url + '/user/patient/'+id, {withCredentials: true});
+  }
 }

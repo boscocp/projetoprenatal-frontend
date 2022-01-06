@@ -73,7 +73,8 @@ export class PatientCreateComponent implements OnInit {
   onSubmit(): void {
     this.patientService.createPatient(this.getPatient())
       .subscribe((res: any) => {
-        this.router.navigate(['/'])
+        this.router.navigate(['/']).finally(() => window.location.reload());
+        alert('Paciente criado com sucesso');
       });
   }
 
