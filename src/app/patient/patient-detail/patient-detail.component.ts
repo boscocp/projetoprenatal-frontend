@@ -14,27 +14,11 @@ export class PatientDetailComponent implements OnInit {
   addresses: Address[]=[];
   id: number = 1;
   constructor(
-    private route: ActivatedRoute,
-    private patientService: PatientService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.getPatient();
-  }
-
-  getPatient(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.id = id;
-    this.patientService.getPatient(id)
-    .subscribe((res: Patient) => {this.patient = res;
-    });
-
-    this.patientService.getAddress(id)
-    .subscribe((res: Address[]) => {
-      this.addresses = res,
-      this.address = res[0]
-    });
-
-
   }
 }

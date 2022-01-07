@@ -1,0 +1,10 @@
+.container {
+  max-width: 300px;
+  min-width: 250px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.patient-name {
+  padding-top: 20px;
+}

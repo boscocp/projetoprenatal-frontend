@@ -1,0 +1,16 @@
+<div *ngIf="patient" class="container mat-elevation-z4">
+  <h2 class="patient-name" >Nome: {{patient.person.name}}</h2>
+  <hr class="my-4">
+  <div>
+    <div> <label for="patient-name">Nome: {{patient.person.name}} </label> </div>
+    <div> <label for="patient-email">email: {{patient.user.email}} </label> </div>
+    <div> <label for="patient-email">CPF: {{patient.person.cpf}} </label> </div>
+    <div> <label for="patient-birt_date">Nascimento: {{patient.person.birt_date | date}} </label> </div>
+    <div> <label for="patient-occupation">Ocupação: {{patient.occupation}} </label> </div>
+    <div> <label for="patient-kinship">Parentesco: {{patient.kinship}} </label> </div>
+    <hr class="my-4">
+    <div> <label for="patient-address">Endereço: {{address?.address}} </label> </div>
+    <div> <label for="patient-address-number">Número: {{address?.number}}, CEP: {{address?.zipcode}} </label> </div>
+  </div>
+  <hr class="my-4">
+</div>

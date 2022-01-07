@@ -22,6 +22,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PersonalInformationComponent } from './personal-information/personal-information.component';
+import { PatientsComponent } from './patient-list/patients/patients.component';
+import { SearchComponent } from './patient-list/search/search.component';
+import { FilterByName } from './patient-list/filter-by-name';
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
@@ -33,7 +37,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     PatientCreateComponent,
     PatientComponent,
     PatientDeleteComponent,
-    PatientDeleteDialog
+    PatientDeleteDialog,
+    PersonalInformationComponent,
+    PatientsComponent,
+    SearchComponent,
+    FilterByName
   ],
   imports: [
     CommonModule,
