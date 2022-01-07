@@ -22,17 +22,17 @@ export class PatientCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl("",Validators.maxLength(200)),
-      email: new FormControl("",Validators.email),
-      cpf: new FormControl(),
-      birt_date: new FormControl(),
-      password: new FormControl(),
+      name: new FormControl('',Validators.maxLength(200)),
+      email: new FormControl('',Validators.email),
+      cpf: new FormControl('',Validators.required),
+      birt_date: new FormControl('',Validators.required),
+      password: new FormControl('',Validators.required),
       kinship: new FormControl(),
-      occupation: new FormControl(),
+      occupation: new FormControl('',Validators.required),
       civil_state: new FormControl(Validators.maxLength(1)),
-      address: new FormControl(),
-      number: new FormControl(),
-      zipcode: new FormControl()
+      address: new FormControl('',Validators.required),
+      number: new FormControl('',Validators.required),
+      zipcode: new FormControl('',Validators.required)
     });
   }
 
@@ -71,7 +71,7 @@ export class PatientCreateComponent implements OnInit {
     return patientRegister;
   }
 
-  onSubmit(): void {
+  createPatient(): void {
     this.patientService.createPatient(this.getPatient())
       .subscribe((res: any) => {
         this.router.navigate(['/']).finally(() => window.location.reload());
