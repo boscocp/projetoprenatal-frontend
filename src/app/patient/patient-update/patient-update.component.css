@@ -1,0 +1,11 @@
+.container {
+  max-width: 600px;
+  min-width: 400px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.example-container {
+  display: flex;
+  justify-content: space-between;
+}

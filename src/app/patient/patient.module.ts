@@ -26,6 +26,7 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 import { PatientsComponent } from './patient-list/patients/patients.component';
 import { SearchComponent } from './patient-list/search/search.component';
 import { FilterByName } from './patient-list/filter-by-name';
+import { PatientUpdateComponent } from './patient-update/patient-update.component';
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
@@ -41,7 +42,8 @@ import { FilterByName } from './patient-list/filter-by-name';
     PersonalInformationComponent,
     PatientsComponent,
     SearchComponent,
-    FilterByName
+    FilterByName,
+    PatientUpdateComponent
   ],
   imports: [
     CommonModule,

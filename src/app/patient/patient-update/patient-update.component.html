@@ -1,0 +1,87 @@
+<div class="container mat-elevation-z4">
+  <!-- Form -->
+  <form [formGroup] = "form">
+    <p>
+      <!-- Name -->
+      <mat-form-field appearance="outline" style="width:100%; margin-top: 15px;">
+        <mat-label>Nome completo</mat-label>
+        <input formControlName="name" id="name" matInput placeholder="Fulano da Costa" required>
+      </mat-form-field>
+      <!-- E-mail -->
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" id="email" placeholder="paciente@email.com" type="email" matInput placeholder="Fulano da Costa" required>
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <!-- Birth date -->
+      <mat-form-field appearance="outline" >
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput formControlName="birt_date" type="date" id="birt_date" required>
+      </mat-form-field>
+    </p>
+    <!-- password -->
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Senha do paciente</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <!-- CPF -->
+    <mat-form-field appearance="outline" style="width:100%">
+      <mat-label>CPF</mat-label>
+      <input formControlName="cpf" id="patientRegisterFormCPF" matInput placeholder="Fulano da Costa" required>
+      <mat-icon matSuffix>fingerprint</mat-icon>
+    </mat-form-field>
+
+    <!-- Estado civil -->
+    <mat-form-field appearance="outline">
+      <mat-label>Estado civil</mat-label>
+      <mat-select formControlName="civil_state" id="civil_state">
+        <mat-option value="S">Solteira</mat-option>
+        <mat-option value="M">Casada</mat-option>
+        <mat-option value="D">Divorciada</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline" style="width:100%">
+      <mat-label>Endereço</mat-label>
+      <input formControlName="address" matInput required>
+      <mat-icon matSuffix>location_city</mat-icon>
+    </mat-form-field>
+
+    <div class="example-container">
+      <!-- Number -->
+      <mat-form-field appearance="outline" style="width:20%">
+        <mat-label>Número</mat-label>
+        <input formControlName="number" matInput required>
+      </mat-form-field>
+      <!-- Zip -->
+      <mat-form-field appearance="outline" style="width:20%">
+        <mat-label>CEP</mat-label>
+        <input formControlName="zipcode" matInput required>
+      </mat-form-field>
+      <!-- Occupation -->
+      <mat-form-field appearance="outline">
+        <mat-label>Ocupacão</mat-label>
+        <input formControlName="occupation" matInput required>
+        <mat-icon matSuffix>work_outline</mat-icon>
+      </mat-form-field>
+    </div>
+
+
+    <!-- Kinship -->
+    <p><mat-checkbox color= 'primary' formControlName="kinship">Parentesco</mat-checkbox></p>
+
+    <button mat-button color="primary" (click)="updatePatient()" type="submit" [disabled]="!form.valid"> Atualizar Paciente </button>
+
+    <hr class="my-4">
+
+  </form>
+  <!-- Form -->
+</div>

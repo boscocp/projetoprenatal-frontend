@@ -15,7 +15,6 @@ export class PatientCreateComponent implements OnInit {
   kinship: boolean = false;
   hide = true;
   constructor(
-    private http: HttpClient,
     private router: Router,
     private patientService: PatientService
   ) { }

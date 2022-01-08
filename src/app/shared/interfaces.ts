@@ -1,7 +1,7 @@
 export interface User {
   email: string;
   tipo: string;
-  password: string;
+  password?: string;
 }
 
 export interface Person {

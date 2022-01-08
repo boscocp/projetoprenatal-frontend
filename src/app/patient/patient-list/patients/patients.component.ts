@@ -43,6 +43,9 @@ export class PatientsComponent implements OnChanges, OnInit {
   }
 
   openPatient(id: string):  void {
-    this.router.navigate(['/detail/'+id])
+    this.router.navigate(['/patient/detail/'+id])
+  }
+  updatePatient(id: string): void {
+    this.router.navigate(['/patient/update/'+id])
   }
 }

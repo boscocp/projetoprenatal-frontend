@@ -6,13 +6,19 @@ import { MedicalRecordDetailComponent } from './patient/medical-record/medical-r
 import { PatientDetailComponent } from './patient/patient-detail/patient-detail.component';
 import { RegisterComponent } from './home/register/register.component';
 import { AuthguardService } from './core/auth/authguard.service';
+import { PatientUpdateComponent } from './patient/patient-update/patient-update.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {
-    path: 'detail/:id',
+    path: 'patient/detail/:id',
     component: PatientDetailComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'patient/update/:id',
+    component: PatientUpdateComponent,
     canActivate: [AuthguardService]
   },
   {

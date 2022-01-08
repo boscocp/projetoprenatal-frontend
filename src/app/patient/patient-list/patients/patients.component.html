@@ -18,8 +18,11 @@
             <div class="example-element-position"> Nascimento: {{element.birt_date}} </div>
           </div>
           <div class="example-button-container">
-            <button (click)="openPatient(element.id)" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <button style="margin-right: 10px" (click)="openPatient(element.id)" mat-mini-fab color="primary">
               <mat-icon>open_in_browser</mat-icon>
+            </button>
+            <button style="margin-right: 10px" (click)="updatePatient(element.id)" mat-mini-fab color="primary">
+              <mat-icon>edit</mat-icon>
             </button>
             <app-patient-delete (onDelete)="needReload()" [name]="user" [id]="element.id" ></app-patient-delete>
           </div>

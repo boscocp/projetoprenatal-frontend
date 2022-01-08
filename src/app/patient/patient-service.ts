@@ -35,4 +35,9 @@ export class PatientService {
   deletePatient(id: Number) {
     return this.http.delete(this.url + '/user/patient/'+id, {withCredentials: true});
   }
+
+  updatePatient(id: Number, patient: PatientRegister) {
+    console.log(patient);
+    return this.http.put(this.url + '/user/patient/'+id, patient, {withCredentials: true});
+  }
 }

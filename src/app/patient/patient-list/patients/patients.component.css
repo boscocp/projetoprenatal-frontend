@@ -26,7 +26,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-detail {
   overflow: hidden;
   display: flex;
-  margin-left: 60px;
+  margin-left: 40px;
+  justify-content: space-around;
 }
 
 .example-element-diagram {
@@ -64,6 +65,5 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-button-container {
   display: flex;
   justify-content: space-between;
-  width: 120px;
-  margin-left: 60px;
+  align-items: center;
 }
