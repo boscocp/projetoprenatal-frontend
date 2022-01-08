@@ -1,5 +1,5 @@
 <p *ngIf="!rows"><em>Loading...</em></p>
-<div class="container">
+<div class="container" style="padding-bottom: 20px;">
   <table mat-table [dataSource]="rows"  multiTemplateDataRows class="mat-elevation-z8">
 
     <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
