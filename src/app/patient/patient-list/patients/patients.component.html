@@ -24,7 +24,7 @@
             <button style="margin-right: 10px" (click)="updatePatient(element.id)" mat-mini-fab color="primary">
               <mat-icon>edit</mat-icon>
             </button>
-            <app-patient-delete (onDelete)="needReload()" [name]="user" [id]="element.id" ></app-patient-delete>
+            <app-patient-delete (onDelete)="needReload()" [id]="element.id" ></app-patient-delete>
           </div>
         </div>
       </td>

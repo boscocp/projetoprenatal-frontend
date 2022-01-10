@@ -2,7 +2,7 @@
   <h2 class="patient-name" >Nome: {{patient.person.name}}</h2>
   <hr class="my-4">
   <div>
-    <div> <label for="patient-name">Nome: {{patient.person.name}} </label> </div>
+    <div> <mat-label for="patient-name">Nome: {{patient.person.name}} </mat-label> </div>
     <div> <label for="patient-email">email: {{patient.user.email}} </label> </div>
     <div> <label for="patient-email">CPF: {{patient.person.cpf}} </label> </div>
     <div> <label for="patient-birt_date">Nascimento: {{patient.person.birt_date | date}} </label> </div>
@@ -14,4 +14,11 @@
     <div> <label for="patient-address-number">Número: {{address?.number}}, CEP: {{address?.zipcode}} </label> </div>
   </div>
   <hr class="my-4">
+  <div class="example-button-container">
+    <button style="margin-right: 10px" (click)="updatePatient(id)" mat-mini-fab color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <app-patient-delete style="margin-bottom: 15px" (onDelete)="needReload()" [id]="id" ></app-patient-delete>
+  </div>
 </div>
+

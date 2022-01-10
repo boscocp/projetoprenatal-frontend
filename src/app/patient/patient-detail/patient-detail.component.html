@@ -1,4 +1,16 @@
 <mat-tab-group mat-align-tabs="center">
-  <mat-tab label="Informações pessoais"><app-personal-information [id]="id"></app-personal-information></mat-tab>
-  <mat-tab label="Consultas realizadas"><app-list-medical-record [id]="id"></app-list-medical-record></mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">perm_identity</mat-icon>
+      Informações pessoais
+    </ng-template>
+    <app-personal-information [id]="id"></app-personal-information>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon  class="example-tab-icon">healing</mat-icon>
+      Consultas realizadas
+    </ng-template>
+    <app-list-medical-record [id]="id"></app-list-medical-record>
+  </mat-tab>
 </mat-tab-group>

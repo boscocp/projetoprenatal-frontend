@@ -1,6 +1,7 @@
 import { Component,Inject, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PatientService } from '../patient-service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { TokenService } from 'src/app/core/token/token.service';
 
 export interface DialogData {
   confirmation: string;
@@ -14,23 +15,24 @@ export interface DialogData {
 })
 export class PatientDeleteComponent implements OnInit {
   @Input() id!: number;
-  @Input() name!: string;
   @Output() onDelete = new EventEmitter();
-
+  user!: string;
   confirmation: string = 'deletar';
 
   constructor(
     private patienteService: PatientService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private tokenService: TokenService
     ) { }
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUser();
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(PatientDeleteDialog, {
       width: '450px',
-      data: {name: this.name, confirmation: ''},
+      data: {name: this.user, confirmation: ''},
     });
 
     dialogRef.afterClosed().subscribe(result => {

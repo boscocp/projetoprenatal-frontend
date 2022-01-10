@@ -13,14 +13,11 @@ import { TokenService } from 'src/app/core/token/token.service';
 export class PatientListComponent implements OnInit {
   patients:  PatientDTO[] = [];
   filter: string = '';
-  user!: string;
   constructor(
-    private patientService: PatientService,
-    private tokenService: TokenService
+    private patientService: PatientService
     ) { }
 
   ngOnInit(): void {
-    this.user = this.tokenService.getUser();
     this.loadPatients();
   }
   loadPatients(): void {

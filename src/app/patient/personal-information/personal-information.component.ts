@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Address, Patient } from 'src/app/shared/interfaces';
 import { PatientService } from '../patient-service';
 
@@ -14,7 +14,7 @@ export class PersonalInformationComponent implements OnInit {
   addresses: Address[]=[];
   @Input() id!: number;
   constructor(
-    private route: ActivatedRoute,
+    private router: Router,
     private patientService: PatientService
   ) { }
 
@@ -32,5 +32,12 @@ export class PersonalInformationComponent implements OnInit {
       this.addresses = res,
       this.address = res[0]
     });
+  }
+  needReload() {
+    this.router.navigate(['/'])
+  }
+
+  updatePatient(id: number): void {
+    this.router.navigate(['/patient/update/'+id])
   }
 }
