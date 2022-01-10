@@ -27,6 +27,9 @@ import { PatientsComponent } from './patient-list/patients/patients.component';
 import { SearchComponent } from './patient-list/search/search.component';
 import { FilterByName } from './patient-list/filter-by-name';
 import { PatientUpdateComponent } from './patient-update/patient-update.component';
+import { MedicalRecordComponent } from './medical-record/medical-record.component';
+import { CreateMedicalRecordComponent } from './medical-record/create-medical-record/create-medical-record.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
@@ -43,7 +46,9 @@ import { PatientUpdateComponent } from './patient-update/patient-update.componen
     PatientsComponent,
     SearchComponent,
     FilterByName,
-    PatientUpdateComponent
+    PatientUpdateComponent,
+    MedicalRecordComponent,
+    CreateMedicalRecordComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +65,8 @@ import { PatientUpdateComponent } from './patient-update/patient-update.componen
     MatFormFieldModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatExpansionModule
   ],
   exports: [
     PatientComponent

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Appointment } from '../../ipatient';
+import { Appointment } from 'src/app/shared/interfaces';
 import { PatientService } from '../../patient-service';
 
 @Component({

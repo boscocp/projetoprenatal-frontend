@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
-import { Address, Patient, PatientDTO, PatientRegister } from '../shared/interfaces';
-import { Appointment } from './ipatient';
+import { Address, Appointment, AppointmentRegister, Patient, PatientDTO, PatientRegister } from '../shared/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class PatientService {
@@ -14,6 +13,10 @@ export class PatientService {
   }
   appointmentById(id: Number) {
     return this.http.get<Appointment>(this.url + '/user/appointment/'+id,{withCredentials: true});
+  }
+
+  createAppointment(appointment: AppointmentRegister) {
+    return this.http.post(this.url + '/user/appointment/', appointment, {withCredentials: true});
   }
 
   createPatient(patient: PatientRegister) {

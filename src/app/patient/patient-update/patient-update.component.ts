@@ -87,7 +87,7 @@ export class PatientUpdateComponent implements OnInit, AfterViewInit {
       person: person,
       user: user,
       occupation: this.form.get('occupation')?.value,
-      kinship: this.kinship
+      kinship: this.form.get('kinship')?.value
     }
 
     let address: Address = {

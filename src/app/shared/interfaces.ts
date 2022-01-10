@@ -43,7 +43,26 @@ export interface PatientDTO {
   email: string;
 }
 
+export interface AppointmentRegister {
+  patient_id?: string;
+  appointment?: Appointment;
+}
+
 export interface MedicRegister {
   medic: Medic;
   address: Address;
+}
+
+export interface Appointment {
+  id?: string,
+  weight?: number,
+  date: Date,
+  ig?: string,
+  pa?: string,
+  edema?: string,
+  av?: string,
+  bcf?: string,
+  complication?: string,
+  cd?: string,
+  substance_use?: string
 }

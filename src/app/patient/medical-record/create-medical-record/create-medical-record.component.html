@@ -1,1 +1,99 @@
-<p>create-medical-record works!</p>
+
+<div class="container">
+
+  <!-- Form <h2 class="patient-name" >Nova consulta de {{patientName}} </h2> -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
+        Nova consulta de {{patientName}}
+        <mat-icon style="margin-left: 15px;">date_range</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup] = "form">
+      <div class="example-container" >
+        <!-- weight -->
+        <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+          <mat-label>Peso</mat-label>
+          <span matSuffix>Kg &nbsp;</span>
+          <input formControlName="weight" id="weight" matInput>
+        </mat-form-field>
+
+        <!-- Appointment date -->
+        <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+          <mat-label>Data da consulta</mat-label>
+          <input matInput formControlName="date" type="date" id="date" required>
+        </mat-form-field>
+
+        <!-- ig -->
+        <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+          <mat-label>IG</mat-label>
+          <input matInput formControlName="ig" id="ig">
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <!-- PA -->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>PA</mat-label>
+          <input matInput formControlName="pa" id="pa">
+        </mat-form-field>
+        <!-- Edema -->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Edema</mat-label>
+          <input matInput formControlName="edema" id="edema">
+        </mat-form-field>
+
+        <!-- AU -->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>AU</mat-label>
+          <input matInput formControlName="av" id="av">
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <!-- BCF -->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>BCF</mat-label>
+          <input matInput formControlName="bcf" id="bcf">
+        </mat-form-field>
+
+        <!-- CD -->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>CD</mat-label>
+          <input matInput formControlName="cd" id="cd">
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <!-- complication -->
+        <mat-form-field appearance="outline"  style="width: 90%">
+          <mat-label>Complicações</mat-label>
+          <input matInput formControlName="complication" id="complication">
+        </mat-form-field>
+      </div>
+        <div class="example-container">
+        <!-- substance_use -->
+        <mat-form-field appearance="outline"  style="width: 90%">
+          <mat-label>Substâncias em uso</mat-label>
+          <input matInput formControlName="substance_use" id="substance_use">
+        </mat-form-field>
+      </div>
+      <button style="margin-bottom: 25px;" mat-raised-button color="primary" (click)="createAppointment()" type="submit" [disabled]="!form.valid"> Cradastrar Consulta </button>
+    </form>
+
+  </mat-expansion-panel>
+
+  <!-- Form -->
+</div>
+
+<!--
+  prenatal = models.ForeignKey(Prenatal,on_delete=models.CASCADE)
+  created = models.DateTimeField(auto_now_add=True)
+  weight = models.FloatField()
+  date = models.DateField(blank=False)
+  ig = models.CharField(max_length=80)
+  pa = models.CharField(max_length=80)
+  edema = models.CharField(max_length=80)
+  av = models.CharField(max_length=80)
+  bcf = models.CharField(max_length=80)
+  complication = models.CharField(max_length=200)
+  cd = models.CharField(max_length=80)
+  substance_use = models.CharField(max_length=200)
+-->

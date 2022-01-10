@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Appointment } from 'src/app/patient/ipatient';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Appointment } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-appointments',

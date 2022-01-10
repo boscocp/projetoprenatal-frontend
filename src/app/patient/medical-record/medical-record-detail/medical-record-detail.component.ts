@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
-import { Patient } from 'src/app/shared/interfaces';
-import { Appointment } from '../../ipatient';
+import { Appointment } from 'src/app/shared/interfaces';
 import { PatientService } from '../../patient-service';
 
 @Component({
