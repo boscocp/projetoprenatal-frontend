@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Atualizar consulta de: {{data.name}}</h1>
+<div mat-dialog-content class="example-container">
+  <p>Deseja realmente atualizar dados da consulta do dia {{data.appointment.date}} ?</p>
+  <form [formGroup] = "form" class="form">
+    <mat-form-field appearance="outline" style="width: 47%; margin-right: 22px;">
+      <mat-label>Peso</mat-label>
+      <input formControlName="weight" id="weight" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%;">
+      <mat-label>Data</mat-label>
+      <input formControlName="date" id="date" type="date" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline"  style="width: 47%; margin-right: 22px;">
+      <mat-label>IG</mat-label>
+      <input formControlName="ig" id="ig" matInput  >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%;">
+      <mat-label>PA</mat-label>
+      <input formControlName="pa" id="pa" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%; margin-right: 22px;">
+      <mat-label>Edema</mat-label>
+      <input formControlName="edema" id="edema" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%;">
+      <mat-label>AU</mat-label>
+      <input formControlName="av" id="av" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%; margin-right: 22px;">
+      <mat-label>BCF</mat-label>
+      <input formControlName="bcf" id="bcf" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 47%;">
+      <mat-label>CD</mat-label>
+      <input formControlName="cd" id="cd" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Complicações</mat-label>
+      <input formControlName="complication" id="complication" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Substâncias em uso</mat-label>
+      <input formControlName="substance_use" id="substance_use" matInput >
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button  mat-raised-button (click)="onNoClick()">Não, obrigado</button>
+  <button mat-raised-button [mat-dialog-close]="data.appointment.date" (click)="updateAppointment()" color="primary" cdkFocusInitial>Atualizar</button>
+</div>

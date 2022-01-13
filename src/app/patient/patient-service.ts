@@ -19,6 +19,10 @@ export class PatientService {
     return this.http.post(this.url + '/user/appointment/', appointment, {withCredentials: true});
   }
 
+  updateAppointment(appointment: Appointment) {
+    return this.http.put(this.url + '/user/appointment/'+ appointment.id, appointment, {withCredentials: true});
+  }
+
   createPatient(patient: PatientRegister) {
     return this.http.post(this.url + '/user/patient/', patient, {withCredentials: true});
   }
@@ -40,7 +44,6 @@ export class PatientService {
   }
 
   updatePatient(id: Number, patient: PatientRegister) {
-    console.log(patient);
     return this.http.put(this.url + '/user/patient/'+id, patient, {withCredentials: true});
   }
 }

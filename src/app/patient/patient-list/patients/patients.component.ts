@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/core/token/token.service';
 import { Patient, PatientDTO } from 'src/app/shared/interfaces';
@@ -20,22 +22,23 @@ import { PatientService } from '../../patient-service';
 export class PatientsComponent implements OnChanges, OnInit {
   @Input() patients: PatientDTO[] = [];
   @Output() onReload = new EventEmitter();
-  rows: PatientDTO[]=[];
+  @ViewChild(MatSort)sort: MatSort = new MatSort;
+  rows = new MatTableDataSource<PatientDTO>();
   columnsToDisplay : string[] = ['name'];
   expandedElement!: Patient | null;
   user!: string;
   constructor(
-    private patientService: PatientService,
     private router: Router,
     private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
     this.user = this.tokenService.getUser();
+    this.rows.sort = this.sort;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['patients']) this.rows=this.patients;
+    if(changes['patients']) this.rows = new MatTableDataSource<PatientDTO>(this.patients)
   }
 
   needReload() {

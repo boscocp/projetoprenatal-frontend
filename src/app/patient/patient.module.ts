@@ -12,7 +12,7 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { MatTableModule } from '@angular/material/table'
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { PatientDeleteComponent, PatientDeleteDialog } from './patient-delete/patient-delete.component';
@@ -30,6 +30,12 @@ import { PatientUpdateComponent } from './patient-update/patient-update.componen
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
 import { CreateMedicalRecordComponent } from './medical-record/create-medical-record/create-medical-record.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AppointmentUpdateDialog, UpdateMedicalRecordComponent } from './medical-record/update-medical-record/update-medical-record.component';
+import { DeleteMedicalRecordComponent } from './medical-record/delete-medical-record/delete-medical-record.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
+
 @NgModule({
   declarations: [
     MedicalRecordDetailComponent,
@@ -48,7 +54,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FilterByName,
     PatientUpdateComponent,
     MedicalRecordComponent,
-    CreateMedicalRecordComponent
+    CreateMedicalRecordComponent,
+    UpdateMedicalRecordComponent,
+    DeleteMedicalRecordComponent,
+    AppointmentUpdateDialog
   ],
   imports: [
     CommonModule,
@@ -58,6 +67,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     RouterModule,
     MatTabsModule,
     MatTableModule,
+    MatSortModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
