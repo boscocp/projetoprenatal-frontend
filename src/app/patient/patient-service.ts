@@ -19,6 +19,10 @@ export class PatientService {
     return this.http.post(this.url + '/user/appointment/', appointment, {withCredentials: true});
   }
 
+  deleteAppointment(id: Number) {
+    return this.http.delete(this.url + '/user/appointment/'+id, {withCredentials: true});
+  }
+
   updateAppointment(appointment: Appointment) {
     return this.http.put(this.url + '/user/appointment/'+ appointment.id, appointment, {withCredentials: true});
   }

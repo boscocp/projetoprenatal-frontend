@@ -31,7 +31,7 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
 import { CreateMedicalRecordComponent } from './medical-record/create-medical-record/create-medical-record.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppointmentUpdateDialog, UpdateMedicalRecordComponent } from './medical-record/update-medical-record/update-medical-record.component';
-import { DeleteMedicalRecordComponent } from './medical-record/delete-medical-record/delete-medical-record.component';
+import { DeleteMedicalRecordComponent, DeleteMedicalRecordDialog } from './medical-record/delete-medical-record/delete-medical-record.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -57,7 +57,8 @@ import { MatSortModule } from '@angular/material/sort';
     CreateMedicalRecordComponent,
     UpdateMedicalRecordComponent,
     DeleteMedicalRecordComponent,
-    AppointmentUpdateDialog
+    AppointmentUpdateDialog,
+    DeleteMedicalRecordDialog
   ],
   imports: [
     CommonModule,

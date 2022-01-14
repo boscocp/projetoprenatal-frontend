@@ -1,1 +1,11 @@
-<app-appointments (onReload)="callAppointments()" [patientName]="patientName" [appointments]="appointments"></app-appointments>
+<div class="container">
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title >
+      Tabela de consultas
+      <mat-icon style="margin-left: 15px;">date_range</mat-icon>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <app-appointments (onReload)="callAppointments()" [patientName]="patientName" [appointments]="appointments"></app-appointments>
+</mat-expansion-panel>
+</div>

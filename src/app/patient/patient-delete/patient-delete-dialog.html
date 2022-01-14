@@ -1,11 +1,11 @@
 <h1 mat-dialog-title>Olá {{data.name}}</h1>
 <div mat-dialog-content>
   <p>Essa opereção não pode ser desfeita. Digite deletar para confirmar</p>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <input matInput [(ngModel)]="data.confirmation">
   </mat-form-field>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-button (click)="onNoClick()">Não, obrigado</button>
-  <button mat-button color="warn" [mat-dialog-close]="data.confirmation" cdkFocusInitial>Deletar</button>
+  <button mat-raised-button (click)="onNoClick()">Não, obrigado</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="data.confirmation" cdkFocusInitial>Deletar</button>
 </div>

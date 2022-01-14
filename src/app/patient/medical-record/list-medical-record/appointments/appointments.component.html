@@ -13,12 +13,9 @@
             <div class="example-element-description"> Complicações: {{element.complication}} </div>
             <div class="example-element-description"> Substâncias em uso: {{element.substance_use}} </div>
           </div>
-          <div class="example-button-container">
-            <app-update-medical-record (onUpdate)="needReload()" [patientName]="patientName" [appointment]="element" ></app-update-medical-record>
-            <!--<button style="margin-right: 10px" (click)="updatePatient(element.id)" mat-mini-fab color="primary">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <app-patient-delete (onDelete)="needReload()" [id]="element.id" ></app-patient-delete>-->
+          <div class="button-container">
+            <app-update-medical-record style="margin-right: 10px" (onUpdate)="needReload()" [patientName]="patientName" [appointment]="element" ></app-update-medical-record>
+            <app-delete-medical-record (onDelete)="needReload()" [id]="element.id"></app-delete-medical-record>
           </div>
         </div>
       </td>
