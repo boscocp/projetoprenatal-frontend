@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppointmentsComponent } from './medical-record/list-medical-record/appointments/appointments.component';
 import { ListMedicalRecordComponent } from './medical-record/list-medical-record/list-medical-record.component';
 import { RouterModule } from '@angular/router';
-import { SelectAppointmentComponent } from './medical-record/select-appointment/select-appointment.component';
 import { PatientComponent } from './patient.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
@@ -46,7 +45,6 @@ import { ListExamComponent } from './exam/list-exam/list-exam.component';
     MedicalRecordDetailComponent,
     AppointmentsComponent,
     ListMedicalRecordComponent,
-    SelectAppointmentComponent,
     PatientDetailComponent,
     PatientListComponent,
     PatientCreateComponent,

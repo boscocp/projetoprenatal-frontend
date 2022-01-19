@@ -13,4 +13,11 @@
     </ng-template>
     <app-medical-record [id]="id"></app-medical-record>
   </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">exposure</mat-icon>
+      Exames
+    </ng-template>
+    <app-exam></app-exam>
+  </mat-tab>
 </mat-tab-group>
