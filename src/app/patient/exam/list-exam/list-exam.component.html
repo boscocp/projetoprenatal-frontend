@@ -1,1 +1,11 @@
-<p>list-exam works!</p>
+<div class="container">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
+        Tabela de Exames
+        <mat-icon style="margin-left: 15px;">list_alt</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-exams (onReload)="callExams()" [patientName]="patientName" [exams]="exams"></app-exams>
+  </mat-expansion-panel>
+  </div>

@@ -4,20 +4,20 @@
       <mat-icon class="example-tab-icon">perm_identity</mat-icon>
       Informações pessoais
     </ng-template>
-    <app-personal-information [id]="id"></app-personal-information>
+    <app-personal-information [id]="id" [patient]="patient"></app-personal-information>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">healing</mat-icon>
       Consultas
     </ng-template>
-    <app-medical-record [id]="id"></app-medical-record>
+    <app-medical-record [patientName]="name"></app-medical-record>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">exposure</mat-icon>
       Exames
     </ng-template>
-    <app-exam></app-exam>
+    <app-exam [patientName]="name"></app-exam>
   </mat-tab>
 </mat-tab-group>

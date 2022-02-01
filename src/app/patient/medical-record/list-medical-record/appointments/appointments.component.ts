@@ -16,24 +16,19 @@ import {MatTableDataSource} from '@angular/material/table';
     ]),
   ]
 })
-export class AppointmentsComponent implements OnInit, OnChanges, AfterViewInit {
+export class AppointmentsComponent implements OnInit, OnChanges {
   @Input() appointments: Appointment[] = [];
   @Input() patientName!: string;
   @Output() onReload = new EventEmitter();
-  // @ViewChild('outerSort', { static: true }) sort!: MatSort;
   rows= new MatTableDataSource<Appointment>();
   columnsToDisplay : string[] = ['date','weight','ig','pa','edema','av','bcf','cd'];
   expandedElement!: Appointment | null;
   constructor(
-    // private cd: ChangeDetectorRef
     ) { }
   ngOnInit(): void {
     this.rows.data =  this.appointments;
   }
 
-  ngAfterViewInit(): void {
-    // this.rows.sort = this.sort;
-  }
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['appointments']) this.rows.data =  this.appointments;
   }
@@ -44,15 +39,6 @@ export class AppointmentsComponent implements OnInit, OnChanges, AfterViewInit {
   }
   toggleRow(element: Appointment) {
     this.expandedElement = this.expandedElement === element ? null : element;
-    // this.cd.detectChanges();
   }
-
-  // announceSortChange(sort:any){
-
-  //   this.rows.data.forEach(element => {
-  //     this.expandedElement = this.expandedElement === element ? null : element;
-  //     this.cd.detectChanges();
-  //   });
-  // }
 
 }

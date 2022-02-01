@@ -10,15 +10,21 @@ import { PatientService } from '../patient-service';
 })
 export class PatientDetailComponent implements OnInit {
   patient!: Patient;
+  name = '';
   address!: Address;
   addresses: Address[]=[];
   id: number = 1;
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private patientService: PatientService
   ) { }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.id = id;
+    this.patientService.getPatient(Number(this.route.snapshot.paramMap.get('id')))
+    .subscribe((res: Patient) => {
+      this.id = Number(res.id);
+      this.patient = res;
+      this.name = res.person.name;
+    });
   }
 }

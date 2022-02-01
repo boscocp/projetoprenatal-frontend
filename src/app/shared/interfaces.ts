@@ -24,6 +24,7 @@ export interface Medic {
 }
 
 export interface Patient {
+  id?: string;
   person: Person;
   user: User;
   occupation: string;
@@ -54,15 +55,40 @@ export interface MedicRegister {
 }
 
 export interface Appointment {
-  id?: string,
-  weight?: number,
-  date: Date,
-  ig?: string,
-  pa?: string,
-  edema?: string,
-  av?: string,
-  bcf?: string,
-  complication?: string,
-  cd?: string,
-  substance_use?: string
+  id?: string;
+  weight?: number;
+  date: Date;
+  ig?: string;
+  pa?: string;
+  edema?: string;
+  av?: string;
+  bcf?: string;
+  complication?: string;
+  cd?: string;
+  substance_use?: string;
+}
+export interface Exam {
+  id?: string;
+  name?: string;
+  date?: Date;
+}
+
+export interface NumericExam {
+  id?: string;
+  patient_id?: number;
+  exam?: Exam;
+  value?: number;
+}
+
+export interface ReagetExam {
+  id?: string;
+  patient_id?: number;
+  exam?: Exam;
+  value?: string;
+}
+export interface OtherExam {
+  id?: string;
+  patient_id?: number;
+  exam?: Exam;
+  value?: string;
 }

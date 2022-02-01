@@ -35,9 +35,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { ExamComponent } from './exam/exam.component';
 import { CreateExamComponent } from './exam/create-exam/create-exam.component';
-import { DeleteExamComponent } from './exam/delete-exam/delete-exam.component';
+import { DeleteExamComponent, DeleteExamDialog } from './exam/delete-exam/delete-exam.component';
 import { UpdateExamComponent } from './exam/update-exam/update-exam.component';
 import { ListExamComponent } from './exam/list-exam/list-exam.component';
+import { ExamsComponent } from './exam/list-exam/exams/exams.component';
 
 
 @NgModule({
@@ -62,11 +63,13 @@ import { ListExamComponent } from './exam/list-exam/list-exam.component';
     DeleteMedicalRecordComponent,
     AppointmentUpdateDialog,
     DeleteMedicalRecordDialog,
+    DeleteExamDialog,
     ExamComponent,
     CreateExamComponent,
     DeleteExamComponent,
     UpdateExamComponent,
-    ListExamComponent
+    ListExamComponent,
+    ExamsComponent
   ],
   imports: [
     CommonModule,

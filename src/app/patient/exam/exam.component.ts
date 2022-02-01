@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exam',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exam.component.css']
 })
 export class ExamComponent implements OnInit {
-
-  constructor() { }
+  @Input() patientName!: string;
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

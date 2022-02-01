@@ -9,10 +9,10 @@ import { PatientService } from '../patient-service';
   styleUrls: ['./personal-information.component.css']
 })
 export class PersonalInformationComponent implements OnInit {
-  patient!: Patient;
   address!: Address;
   addresses: Address[]=[];
   @Input() id!: number;
+  @Input() patient!: Patient;
   constructor(
     private router: Router,
     private patientService: PatientService
@@ -23,10 +23,6 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   getPatient(): void {
-    this.patientService.getPatient(this.id)
-    .subscribe((res: Patient) => {this.patient = res;
-    });
-
     this.patientService.getAddress(this.id)
     .subscribe((res: Address[]) => {
       this.addresses = res,
