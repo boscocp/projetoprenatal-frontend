@@ -1,10 +1,22 @@
+<div *ngIf="prenatal" class="container mat-elevation-z4">
+  <h2 class="patient-name" >Nome: {{patient.person.name}}</h2>
+  <div> <mat-label for="patient-age">Idade: {{age}}</mat-label> </div>
+  <div> <mat-label for="patient-age">IG US: {{weekGestationaAgeUS}} semanas e {{dayGestationaAgeUS}} dias</mat-label> </div>
+  <div> <mat-label for="patient-age">IG DUM: {{weekGestationaAgeLastPeriod}} semanas e {{dayGestationaAgeLastPeriod}} dias</mat-label> </div>
+  <div> <mat-label for="patient-age">DON: {{prenatal.don}}</mat-label> </div>
+  <div> <mat-label for="patient-age">DOPP: {{prenatal.dopp}}</mat-label> </div>
+  <div> <mat-label for="patient-age">DOPA: {{prenatal.dopa}}</mat-label> </div>
+  <div> <mat-label for="patient-age">DG: {{prenatal.dg}}</mat-label> </div>
+  <div> <mat-label for="patient-age">DCC: {{prenatal.dcc}}</mat-label> </div>
+</div>
+
 <mat-tab-group mat-align-tabs="center">
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">perm_identity</mat-icon>
       Informações pessoais
     </ng-template>
-    <app-personal-information [id]="id" [patient]="patient"></app-personal-information>
+    <app-personal-information [patient]="patient"></app-personal-information>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>

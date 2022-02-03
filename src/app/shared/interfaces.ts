@@ -31,6 +31,20 @@ export interface Patient {
   kinship: boolean;
 }
 
+export interface Prenatal {
+  id?: string;
+  patient: Patient;
+  created?: Date;
+  start_date?: Date;
+  last_menstrual_period?: Date;
+  ultrasound_gestational_start?: Date;
+  don?: string;
+  dopp?: string;
+  dopa?: string;
+  dg?: string;
+  dcc?: string;
+}
+
 export interface PatientRegister {
   patient: Patient;
   address: Address;
@@ -61,7 +75,7 @@ export interface Appointment {
   ig?: string;
   pa?: string;
   edema?: string;
-  av?: string;
+  au?: string;
   bcf?: string;
   complication?: string;
   cd?: string;

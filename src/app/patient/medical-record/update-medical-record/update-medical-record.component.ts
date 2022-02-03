@@ -62,7 +62,7 @@ export class AppointmentUpdateDialog implements OnInit {
     this.form.controls['edema'].setValue(this.data.appointment.edema);
     this.form.controls['ig'].setValue(this.data.appointment.ig);
     this.form.controls['pa'].setValue(this.data.appointment.pa);
-    this.form.controls['av'].setValue(this.data.appointment.av);
+    this.form.controls['au'].setValue(this.data.appointment.au);
     this.form.controls['bcf'].setValue(this.data.appointment.bcf);
     this.form.controls['complication'].setValue(this.data.appointment.complication);
     this.form.controls['cd'].setValue(this.data.appointment.cd);
@@ -93,7 +93,7 @@ export class AppointmentUpdateDialog implements OnInit {
       ig: this.form.get('ig')?.value,
       pa: this.form.get('pa')?.value,
       edema: this.form.get('edema')?.value,
-      av: this.form.get('av')?.value,
+      au: this.form.get('au')?.value,
       bcf: this.form.get('bcf')?.value,
       complication: this.form.get('complication')?.value,
       cd: this.form.get('cd')?.value,

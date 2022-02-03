@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Address, Patient } from 'src/app/shared/interfaces';
 import { PatientService } from '../patient-service';
 
@@ -11,14 +11,16 @@ import { PatientService } from '../patient-service';
 export class PersonalInformationComponent implements OnInit {
   address!: Address;
   addresses: Address[]=[];
-  @Input() id!: number;
+  id!: number;
   @Input() patient!: Patient;
   constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private patientService: PatientService
   ) { }
 
   ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.getPatient();
   }
 
@@ -33,7 +35,7 @@ export class PersonalInformationComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
-  updatePatient(id: number): void {
-    this.router.navigate(['/patient/update/'+id])
+  updatePatient(): void {
+    this.router.navigate(['/patient/update/'+this.id])
   }
 }

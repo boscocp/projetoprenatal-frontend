@@ -43,7 +43,7 @@ export class PatientDeleteComponent implements OnInit {
   }
 
   deletePatient(): void {
-    this.patienteService.deletePatient(this.id).subscribe(()=>{
+    this.patienteService.deletePatient(Number(this.id)).subscribe(()=>{
       alert('Paciente deletado');
       this.onDelete.emit();
     });

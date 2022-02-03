@@ -1,13 +1,10 @@
 <div *ngIf="patient" class="container mat-elevation-z4">
-  <h2 class="patient-name" >Nome: {{patient.person.name}}</h2>
-  <hr class="my-4">
   <div>
-    <div> <mat-label for="patient-name">Nome: {{patient.person.name}} </mat-label> </div>
     <div> <mat-label for="patient-email">email: {{patient.user.email}} </mat-label> </div>
     <div> <mat-label for="patient-email">CPF: {{patient.person.cpf}} </mat-label> </div>
     <div> <mat-label for="patient-birt_date">Nascimento: {{patient.person.birt_date | date}} </mat-label> </div>
     <div> <mat-label for="patient-occupation">Ocupação: {{patient.occupation}} </mat-label> </div>
-    <div> <mat-label for="patient-kinship">Parentesco: {{patient.kinship}} </mat-label> </div> civil_state
+    <div> <mat-label for="patient-kinship">Parentesco: {{patient.kinship}} </mat-label> </div>
     <div> <mat-label for="patient-civil_state">Estado civil: {{patient.person.civil_state}} </mat-label> </div>
     <hr class="my-4">
     <div> <mat-label for="patient-address">Endereço: {{address?.address}} </mat-label> </div>
@@ -15,7 +12,7 @@
   </div>
   <hr class="my-4">
   <div class="example-button-container">
-    <button style="margin-right: 10px" (click)="updatePatient(id)" mat-mini-fab color="primary">
+    <button style="margin-right: 10px" (click)="updatePatient()" mat-mini-fab color="primary">
       <mat-icon>edit</mat-icon>
     </button>
     <app-patient-delete style="margin-bottom: 15px" (onDelete)="needReload()" [id]="id" ></app-patient-delete>

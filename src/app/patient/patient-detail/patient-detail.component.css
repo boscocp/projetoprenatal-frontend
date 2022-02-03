@@ -1,3 +1,12 @@
 .example-tab-icon {
   margin-right: 8px;
 }
+
+.container {
+  max-width: 500px;
+  min-width: 250px;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 20px;
+}
