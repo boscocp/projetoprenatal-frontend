@@ -75,7 +75,7 @@ export class AppointmentUpdateDialog implements OnInit {
       ig : new FormControl('',Validators.maxLength(10)),
       pa : new FormControl('',Validators.maxLength(10)),
       edema : new FormControl('',Validators.maxLength(10)),
-      av : new FormControl('',Validators.maxLength(10)),
+      au : new FormControl('',Validators.maxLength(10)),
       bcf : new FormControl('',Validators.maxLength(10)),
       complication : new FormControl('',Validators.maxLength(200)),
       cd : new FormControl('',Validators.maxLength(10)),

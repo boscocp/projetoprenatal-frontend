@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Atualizar prenatal de: {{data.name}} ?</h1>
+<div mat-dialog-content class="example-container">
+  <form [formGroup] = "form" class="form">
+    <div>
+      <mat-form-field appearance="outline" >
+        <mat-label>DUM</mat-label>
+        <input formControlName="last_menstrual_period" id="last_menstrual_period" type="date" matInput >
+      </mat-form-field>
+    </div>
+    <hr class="my-4">
+    <div>
+      <mat-form-field appearance="outline" >
+        <mat-label>Data do Exame de Ultrassom</mat-label>
+        <input formControlName="examDate" id="examDate" type="date" matInput >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>IG do Ultrassom na data do exame</mat-label>
+      <mat-form-field appearance="outline" >
+        <mat-label>Dias</mat-label>
+        <input formControlName="days" id="days"  matInput >
+      </mat-form-field>
+      <mat-form-field appearance="outline" >
+        <mat-label>Semanas</mat-label>
+        <input formControlName="weeks" id="weeks"  matInput >
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button  mat-raised-button (click)="onNoClick()">Não, obrigado</button>
+  <button mat-raised-button [mat-dialog-close]="data.prenatal.id" (click)="updatePrenatal()" color="primary" cdkFocusInitial>Atualizar</button>
+</div>

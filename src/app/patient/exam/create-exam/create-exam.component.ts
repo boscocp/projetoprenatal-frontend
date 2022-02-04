@@ -24,7 +24,7 @@ export class CreateExamComponent implements OnInit {
     { key: 'Toxoplasmose', label: 'Toxoplasmose' },
     { key: 'Hemog', label: 'Hemog. Hematócrito' },
     { key: 'Urina-EAS', label: 'Urina-EAS' },
-    { key: 'Urina-EAS', label: 'Urina-EAS' },
+    { key: 'Urina-Cultura', label: 'Urina-Cultura' },
     { key: 'Coombs Ind', label: 'Coombs Indireto' },
     //{ key: 'reagent', label: 'Reagente' }
     //{ key: 'numeric', label: 'Numerico' }

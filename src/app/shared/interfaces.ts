@@ -45,6 +45,18 @@ export interface Prenatal {
   dcc?: string;
 }
 
+export interface PrenatalDTO {
+  id?: string;
+  start_date?: Date;
+  last_menstrual_period?: Date;
+  ultrasound_gestational_start?: string;
+  don?: string;
+  dopp?: string;
+  dopa?: string;
+  dg?: string;
+  dcc?: string;
+}
+
 export interface PatientRegister {
   patient: Patient;
   address: Address;

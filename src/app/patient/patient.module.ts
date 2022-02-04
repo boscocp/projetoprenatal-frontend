@@ -7,7 +7,7 @@ import { AppointmentsComponent } from './medical-record/list-medical-record/appo
 import { ListMedicalRecordComponent } from './medical-record/list-medical-record/list-medical-record.component';
 import { RouterModule } from '@angular/router';
 import { PatientComponent } from './patient.component';
-import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { PatientDetailComponent, PrenatalDUpdateDialog, PrenatalIGUpdateDialog } from './patient-detail/patient-detail.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -69,7 +69,9 @@ import { ExamsComponent } from './exam/list-exam/exams/exams.component';
     DeleteExamComponent,
     UpdateExamComponent,
     ListExamComponent,
-    ExamsComponent
+    ExamsComponent,
+    PrenatalIGUpdateDialog,
+    PrenatalDUpdateDialog
   ],
   imports: [
     CommonModule,

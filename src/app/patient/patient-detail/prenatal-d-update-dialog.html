@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Atualizar prenatal de: {{data.name}} ?</h1>
+<div mat-dialog-content class="example-container">
+  <form [formGroup] = "form" class="form">
+    <div>
+      <mat-form-field appearance="outline" >
+        <mat-label>DON</mat-label>
+        <input formControlName="don" id="don" matInput >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>DOPP</mat-label>
+        <input formControlName="dopp" id="dopp" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" >
+        <mat-label>DOPA</mat-label>
+        <input formControlName="dopa" id="dopa" matInput  >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>DG</mat-label>
+        <input formControlName="dg" id="dg" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>DG</mat-label>
+        <input formControlName="dcc" id="dcc" matInput>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button  mat-raised-button (click)="onNoClick()">Não, obrigado</button>
+  <button mat-raised-button [mat-dialog-close]="data.prenatal.id" (click)="updatePrenatal()" color="primary" cdkFocusInitial>Atualizar</button>
+</div>

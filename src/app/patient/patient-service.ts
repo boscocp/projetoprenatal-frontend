@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
-import { Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, ReagetExam } from '../shared/interfaces';
+import { Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, PrenatalDTO, ReagetExam } from '../shared/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class PatientService {
@@ -73,5 +73,9 @@ export class PatientService {
 
   deleteExam(id: Number){
     return this.http.delete(this.url + '/user/otherexam/'+id, {withCredentials: true});
+  }
+
+  updatePrenatal(prenatal: PrenatalDTO){
+    return this.http.put(this.url + '/user/prenatal/'+prenatal.id, prenatal, {withCredentials: true});
   }
 }
