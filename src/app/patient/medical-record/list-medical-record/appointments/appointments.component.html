@@ -9,15 +9,43 @@
       <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
         <div class="example-element-detail"
              [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-          <div >
-            <div class="example-element-description"> Complicações: {{element.complication}} </div>
-            <div class="example-element-description"> Substâncias em uso: {{element.substance_use}} </div>
-          </div>
-          <div class="button-container">
-            <app-update-medical-record style="margin-right: 10px" (onUpdate)="needReload()" [patientName]="patientName" [appointment]="element" ></app-update-medical-record>
-            <app-delete-medical-record (onDelete)="needReload()" [id]="element.id"></app-delete-medical-record>
+          <div class="card-edit">
+            <div>
+              <br>
+              <mat-card>
+                <mat-card-content>
+                  <mat-card-subtitle>Informações adicionais:</mat-card-subtitle>
+                  <p>
+                    Complicações: {{element.complication}}
+                  </p>
+                  <p>
+                    Substâncias em uso: {{element.substance_use}}
+                  </p>
+                </mat-card-content>s
+              </mat-card>
+              <br>
+            </div>
+            <div>
+              <div *ngFor="let addendum of addedums">
+                <mat-card>
+                  <mat-card-subtitle>Errata do dia: {{addendum.created | date}}</mat-card-subtitle>
+                  <mat-card-content>
+                    <p>
+                      {{addendum.info}}
+                    </p>
+                  </mat-card-content>
+                  </mat-card>
+                  <br>
+              </div>
+            </div>
+            <div class="button-container">
+              <app-update-medical-record style="margin-right: 10px" (onUpdate)="needReload()" [patientName]="patientName" [appointment]="element" ></app-update-medical-record>
+              <app-delete-medical-record (onDelete)="needReload()" [id]="element.id"></app-delete-medical-record>
+            </div>
+            <br>
           </div>
         </div>
+
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay;"></tr>

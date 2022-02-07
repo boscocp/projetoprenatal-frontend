@@ -68,17 +68,6 @@ export class PatientDetailComponent implements OnInit {
     return [0,0];
   }
 
-  // gestationaAgeUSCalculator(date: any): number[] {
-  //   if(date){
-  //     let today = new Date(Date.now());
-  //     const weeks = Math.abs((date.getTime() - today.getTime()) / (7 * 24 * 60 * 60 * 1000));
-  //     const timeDiff = Math.abs(today.getDate() - date.getDate());
-  //     return [weeks,];
-  //   }
-  //   return [0,0];
-  // }
-
-
   daysInMonth (month: number, year:number) : number {
     return new Date(year, month, 0).getDate();
   }

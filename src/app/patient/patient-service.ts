@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
-import { Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, PrenatalDTO, ReagetExam } from '../shared/interfaces';
+import { Addendum, AddendumUpdate, Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, PrenatalDTO, ReagetExam } from '../shared/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class PatientService {
@@ -23,8 +23,16 @@ export class PatientService {
     return this.http.delete(this.url + '/user/appointment/'+id, {withCredentials: true});
   }
 
-  updateAppointment(appointment: Appointment) {
-    return this.http.put(this.url + '/user/appointment/'+ appointment.id, appointment, {withCredentials: true});
+  // updateAppointment(appointment: Appointment) {
+  //   return this.http.put(this.url + '/user/appointment/'+ appointment.id, appointment, {withCredentials: true});
+  // }
+
+  updateAppointment(addendumUpdate: AddendumUpdate) {
+    return this.http.post(this.url + '/user/addendum/', addendumUpdate, {withCredentials: true});
+  }
+
+  getAddemdums(appointment_id: Number){
+    return this.http.get<Addendum[]>(this.url + '/user/addendum/'+appointment_id, {withCredentials: true})
   }
 
   createPatient(patient: PatientRegister) {

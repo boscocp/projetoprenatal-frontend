@@ -39,7 +39,7 @@ import { DeleteExamComponent, DeleteExamDialog } from './exam/delete-exam/delete
 import { UpdateExamComponent } from './exam/update-exam/update-exam.component';
 import { ListExamComponent } from './exam/list-exam/list-exam.component';
 import { ExamsComponent } from './exam/list-exam/exams/exams.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -71,7 +71,7 @@ import { ExamsComponent } from './exam/list-exam/exams/exams.component';
     ListExamComponent,
     ExamsComponent,
     PrenatalIGUpdateDialog,
-    PrenatalDUpdateDialog
+    PrenatalDUpdateDialog,
   ],
   imports: [
     CommonModule,
@@ -90,7 +90,8 @@ import { ExamsComponent } from './exam/list-exam/exams/exams.component';
     MatDatepickerModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule
   ],
   exports: [
     PatientComponent

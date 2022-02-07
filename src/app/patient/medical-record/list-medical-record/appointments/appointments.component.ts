@@ -1,8 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-import { Appointment } from 'src/app/shared/interfaces';
+import { Addendum, Appointment } from 'src/app/shared/interfaces';
 import {MatTableDataSource} from '@angular/material/table';
+import { PatientService } from 'src/app/patient/patient-service';
 
 @Component({
   selector: 'app-appointments',
@@ -21,9 +22,11 @@ export class AppointmentsComponent implements OnInit, OnChanges {
   @Input() patientName!: string;
   @Output() onReload = new EventEmitter();
   rows= new MatTableDataSource<Appointment>();
-  columnsToDisplay : string[] = ['date','weight','ig','pa','edema','av','bcf','cd'];
+  columnsToDisplay : string[] = ['date','weight','ig','pa','edema','au','bcf','cd'];
   expandedElement!: Appointment | null;
+  addedums: Addendum[]=[];
   constructor(
+    private patienteService: PatientService
     ) { }
   ngOnInit(): void {
     this.rows.data =  this.appointments;
@@ -38,6 +41,10 @@ export class AppointmentsComponent implements OnInit, OnChanges {
     this.onReload.emit();
   }
   toggleRow(element: Appointment) {
+    this.addedums = [];
+    this.patienteService.getAddemdums(Number(element.id)).subscribe(res=>{
+      this.addedums = res;
+    });
     this.expandedElement = this.expandedElement === element ? null : element;
   }
 

@@ -56,6 +56,15 @@ export interface PrenatalDTO {
   dg?: string;
   dcc?: string;
 }
+export interface Addendum {
+  id?: string;
+  created?: Date;
+  info?: string;
+}
+export interface AddendumUpdate {
+  appointment_id?: string;
+  addendum?: Addendum;
+}
 
 export interface PatientRegister {
   patient: Patient;
