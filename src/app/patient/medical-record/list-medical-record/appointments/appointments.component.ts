@@ -22,12 +22,26 @@ export class AppointmentsComponent implements OnInit, OnChanges {
   @Input() patientName!: string;
   @Output() onReload = new EventEmitter();
   rows= new MatTableDataSource<Appointment>();
-  columnsToDisplay : string[] = ['date','weight','ig','pa','edema','au','bcf','cd'];
+  colsToDisplay = {
+    //'date': 'Data',
+    'weight': 'Peso',
+    'ig': 'IG',
+    'pa': 'PA',
+    'edema': 'Edema',
+    'au': 'AU',
+    'bcf': 'BCF',
+    'cd': 'CD'
+  };
+  columnsToDisplay : string[] = [];
+
   expandedElement!: Appointment | null;
   addedums: Addendum[]=[];
   constructor(
     private patienteService: PatientService
-    ) { }
+    ) {
+      this.columnsToDisplay.push("date");
+      this.columnsToDisplay.push(...Object.keys(this.colsToDisplay));
+     }
   ngOnInit(): void {
     this.rows.data =  this.appointments;
   }
