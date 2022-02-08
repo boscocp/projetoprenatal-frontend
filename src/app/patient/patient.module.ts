@@ -71,7 +71,7 @@ import {MatCardModule} from '@angular/material/card';
     ListExamComponent,
     ExamsComponent,
     PrenatalIGUpdateDialog,
-    PrenatalDUpdateDialog,
+    PrenatalDUpdateDialog
   ],
   imports: [
     CommonModule,

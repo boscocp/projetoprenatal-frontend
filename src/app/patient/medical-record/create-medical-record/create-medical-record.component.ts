@@ -30,7 +30,7 @@ export class CreateMedicalRecordComponent implements OnInit {
       au : new FormControl('',Validators.maxLength(10)),
       bcf : new FormControl('',Validators.maxLength(10)),
       complication : new FormControl('',Validators.maxLength(200)),
-      cd : new FormControl('',Validators.maxLength(10)),
+      cd : new FormControl('',Validators.maxLength(500)),
       substance_use : new FormControl('',Validators.maxLength(200))
     });
   }
