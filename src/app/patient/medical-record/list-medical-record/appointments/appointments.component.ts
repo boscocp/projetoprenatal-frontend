@@ -27,10 +27,10 @@ export class AppointmentsComponent implements OnInit, OnChanges {
     'weight': 'Peso',
     'ig': 'IG',
     'pa': 'PA',
-    'edema': 'Edema',
+    //'edema': 'Edema',
     'au': 'AU',
-    'bcf': 'BCF',
-    'cd': 'CD'
+    //'bcf': 'BCF',
+    //'cd': 'CD'
   };
   columnsToDisplay : string[] = [];
 
@@ -54,6 +54,7 @@ export class AppointmentsComponent implements OnInit, OnChanges {
     console.log("entrou needReload");
     this.onReload.emit();
   }
+
   toggleRow(element: Appointment) {
     this.addedums = [];
     this.patienteService.getAddemdums(Number(element.id)).subscribe(res=>{

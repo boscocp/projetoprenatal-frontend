@@ -12,16 +12,17 @@ import { UltrassoundsComponent } from './exams/ultrassounds/ultrassounds.compone
 })
 export class ListExamComponent implements OnInit {
   @ViewChild(ExamsComponent) examChild!: ExamsComponent;
-  @ViewChild(UltrassoundsComponent) ultrassoundChild!: UltrassoundsComponent;
   exams: OtherExam[]=[];
   ultrassounds: UltrassoundExam[]=[];
+  @Input() igDum!: Date;
+  @Input() igUS!: Date;
+
   @Input() patientName!: string;
   id!:number;
   constructor(
     private patientService: PatientService,
     private route: ActivatedRoute
   ) {
-
    }
 
   ngOnInit(): void {
@@ -31,7 +32,6 @@ export class ListExamComponent implements OnInit {
   callExams() {
     this.patientService.getUltrassounds(this.id).subscribe(ultrassounds => {
       this.ultrassounds = ultrassounds;
-      //this.ultrassoundChild.setUltrassounds(ultrassounds);
     });
     this.patientService.getExams(this.id).subscribe(exams => {
       this.exams = exams;

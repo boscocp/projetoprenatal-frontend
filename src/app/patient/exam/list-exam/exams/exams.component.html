@@ -1,4 +1,8 @@
 <div class="container">
+  <div>
+    IG US <mat-slide-toggle color="primary" (change)="switchIG()" [(ngModel)]="isDum"></mat-slide-toggle> IG DUM
+  </div>
+  <br>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title >
@@ -34,7 +38,7 @@
     </table>
   </mat-expansion-panel>
 </div>
-<br>
+
 <div class="container">
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -71,7 +75,7 @@
     </table>
   </mat-expansion-panel>
 </div>
-<br>
+
 <div class="container">
   <mat-expansion-panel>
     <mat-expansion-panel-header>

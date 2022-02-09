@@ -30,7 +30,7 @@ export class OtherExamComponent implements OnInit {
 
   initForm() : FormGroup {
     return new FormGroup({
-      name: new FormControl('',Validators.maxLength(10)),
+      //name: new FormControl('',Validators.maxLength(10)),
       date : new FormControl('',Validators.required),
       value: new FormControl('',Validators.required),
       selected : new FormControl(),

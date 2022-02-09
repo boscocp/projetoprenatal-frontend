@@ -25,6 +25,8 @@ export class PatientDetailComponent implements OnInit {
   dayGestationaAgeUS: Number = 1;
   weekGestationaAgeLastPeriod: Number = 0;
   dayGestationaAgeLastPeriod: Number = 1;
+  igDum!: Date;
+  igUS!: Date;
   constructor(
     private route: ActivatedRoute,
     private patientService: PatientService,
@@ -44,7 +46,14 @@ export class PatientDetailComponent implements OnInit {
       let aux2: number[] = this.gestationalWeekCalculator(res.ultrasound_gestational_start);
       this.weekGestationaAgeUS = aux2[0];
       this.dayGestationaAgeUS = aux2[1]
+      this.setIG(res.last_menstrual_period, res.ultrasound_gestational_start)
     });
+  }
+  setIG(dum: any, us: any){
+    if(dum && us){
+      this.igDum = new Date(dum);
+      this.igUS = new Date(us);
+    }
   }
 
   ageCalculator(date: Date) : Number{

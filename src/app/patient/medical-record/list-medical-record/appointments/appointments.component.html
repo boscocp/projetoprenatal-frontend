@@ -1,4 +1,3 @@
-<p *ngIf="!rows"><em>Carregando...</em></p>
 <div class="container" style="padding-bottom: 20px;">
   <table mat-table [dataSource]="rows" multiTemplateDataRows class="mat-elevation-z8">
     <ng-container matColumnDef="{{column.key}}" *ngFor="let column of colsToDisplay | keyvalue">
@@ -21,12 +20,21 @@
                 <mat-card-content>
                   <mat-card-subtitle>Informações adicionais:</mat-card-subtitle>
                   <p>
-                    Complicações: {{element.complication}}
+                    Edema: {{element.edema}}
+                  </p>
+                  <p>
+                    BCF: {{element.bcf}}
+                  </p>
+                  <p>
+                    CD: {{element.cd}}
+                  </p>
+                  <p>
+                    Intercorrências: {{element.complication}}
                   </p>
                   <p>
                     Substâncias em uso: {{element.substance_use}}
                   </p>
-                </mat-card-content>s
+                </mat-card-content>
               </mat-card>
               <br>
             </div>

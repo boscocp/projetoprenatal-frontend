@@ -43,6 +43,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UltrassoundsComponent } from './exam/list-exam/exams/ultrassounds/ultrassounds.component';
 import { UltrassoundComponent } from './exam/create-exam/ultrassound/ultrassound.component';
 import { OtherExamComponent } from './exam/create-exam/other-exam/other-exam.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { OtherExamComponent } from './exam/create-exam/other-exam/other-exam.com
     MatSelectModule,
     MatCheckboxModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatSlideToggleModule
   ],
   exports: [
     PatientComponent

@@ -19,7 +19,7 @@
         </mat-form-field>
 
         <!-- Appointment date -->
-        <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+        <mat-form-field appearance="outline" class="input" style="width:30%;margin-top: 15px;">
           <mat-label>Data da consulta</mat-label>
           <input matInput formControlName="date" type="date" id="date" required>
         </mat-form-field>
@@ -54,25 +54,26 @@
           <mat-label>BCF</mat-label>
           <input matInput formControlName="bcf" id="bcf">
         </mat-form-field>
-
+      </div>
+      <div class="example-container">
         <!-- CD -->
-        <mat-form-field appearance="outline" class="input">
+        <mat-form-field appearance="outline" style="width: 90%">
           <mat-label>CD</mat-label>
-          <input matInput formControlName="cd" id="cd">
+          <textarea matInput formControlName="cd" id="cd"></textarea>
         </mat-form-field>
       </div>
       <div class="example-container">
         <!-- complication -->
-        <mat-form-field appearance="outline"  style="width: 90%">
-          <mat-label>Complicações</mat-label>
-          <input matInput formControlName="complication" id="complication">
+        <mat-form-field appearance="outline" style="width: 90%">
+          <mat-label>Intercorrências</mat-label>
+          <textarea matInput formControlName="complication" id="complication"></textarea>
         </mat-form-field>
       </div>
-        <div class="example-container">
+      <div class="example-container">
         <!-- substance_use -->
         <mat-form-field appearance="outline"  style="width: 90%">
           <mat-label>Substâncias em uso</mat-label>
-          <input matInput formControlName="substance_use" id="substance_use">
+          <textarea matInput formControlName="substance_use" id="substance_use"></textarea>
         </mat-form-field>
       </div>
       <button style="margin-bottom: 25px;" mat-raised-button color="primary" (click)="createAppointment()" type="submit" [disabled]="!form.valid"> Cradastrar Consulta </button>

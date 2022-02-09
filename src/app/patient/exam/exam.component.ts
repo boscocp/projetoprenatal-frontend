@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ExamComponent implements OnInit {
   @Input() patientName!: string;
+  @Input() igDum!: Date;
+  @Input() igUS!: Date;
   constructor(
   ) { }
 
