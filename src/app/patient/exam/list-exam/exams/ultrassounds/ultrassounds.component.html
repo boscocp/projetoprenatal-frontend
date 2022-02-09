@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
+        Tabela de Exames de Ultrassom
+        <mat-icon style="margin-left: 15px;">list_alt</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <div *ngFor="let ultrassound of ultrassounds">
+        <mat-card>
+          <mat-card-subtitle>Data: {{ultrassound.exam?.date | date}}</mat-card-subtitle>
+          <mat-card-content>
+            <p>
+              IG: {{ultrassound.ig}}
+            </p>
+            <p>
+              PFE: {{ultrassound.pfe}}
+            </p>
+            <p>
+              LA: {{ultrassound.la}}
+            </p>
+            <p>
+              Placenta: {{ultrassound.placenta}}
+            </p>
+            <p>
+              Outras informações: {{ultrassound.other_info}}
+            </p>
+          </mat-card-content>
+          </mat-card>
+          <br>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>

@@ -1,0 +1,28 @@
+<form [formGroup] = "form">
+  <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+    <mat-label>Data do exame</mat-label>
+    <input matInput formControlName="date" type="date" id="date">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+    <mat-label>IG</mat-label>
+    <input formControlName="ig" id="ig" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+    <mat-label>PFE</mat-label>
+    <input matInput formControlName="pfe" id="pfe">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+    <mat-label>LA</mat-label>
+    <input matInput formControlName="la" id="la">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+    <mat-label>Placenta</mat-label>
+    <input matInput formControlName="placenta" id="placenta">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline" class="input-text" >
+    <mat-label>Outras informações</mat-label>
+    <textarea matInput formControlName="other_info" id="other_info"></textarea>
+  </mat-form-field>
+  <button style="margin-bottom: 25px;" mat-raised-button color="primary" (click)="createExam()" type="submit" [disabled]="!form.valid"> Cradastrar exame </button>
+</form>

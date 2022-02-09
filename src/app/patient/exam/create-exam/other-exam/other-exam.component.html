@@ -1,0 +1,25 @@
+<form [formGroup] = "form">
+  <div>
+    <mat-form-field appearance="outline" class="input" style="margin-top: 15px;" *ngIf="formIn.get('selected')?.value==='other' ">
+      <mat-label>Nome</mat-label>
+      <input formControlName="name" id="name" matInput required>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+      <mat-label>Data do exame</mat-label>
+      <input matInput formControlName="date" type="date" id="date">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input" style="margin-top: 15px;" *ngIf="formIn.get('selected')?.value!=='HIV' ">
+      <mat-label>Valor</mat-label>
+      <input matInput formControlName="value" id="value">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input" style="margin-top: 15px;" *ngIf="formIn.get('selected')?.value==='HIV'">
+      <mat-label>Valor</mat-label>
+      <mat-select formControlName="reagent">
+        <mat-option *ngFor="let opt of reagent_options" [value]="opt.key">
+          {{opt.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button style="margin-bottom: 25px;" mat-raised-button color="primary" (click)="createExam()" type="submit" [disabled]="!form.valid"> Cradastrar exame </button>
+</form>

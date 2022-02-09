@@ -104,6 +104,7 @@ export interface Appointment {
 }
 export interface Exam {
   id?: string;
+  created?: string;
   name?: string;
   date?: Date;
 }
@@ -126,4 +127,14 @@ export interface OtherExam {
   patient_id?: number;
   exam?: Exam;
   value?: string;
+}
+export interface UltrassoundExam {
+  id?: string;
+  patient_id?: number;
+  exam?: Exam;
+  ig?: string;
+  pfe?: string;
+  la?: string;
+  placenta?: string;
+  other_info?: string;
 }

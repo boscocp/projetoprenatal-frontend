@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
-import { Addendum, AddendumUpdate, Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, PrenatalDTO, ReagetExam } from '../shared/interfaces';
+import { Addendum, AddendumUpdate, Address, Appointment, AppointmentRegister, NumericExam, OtherExam, Patient, PatientDTO, PatientRegister, Prenatal, PrenatalDTO, ReagetExam, UltrassoundExam } from '../shared/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class PatientService {
@@ -77,6 +77,14 @@ export class PatientService {
 
   getExams(id: Number){
     return this.http.get<OtherExam[]>(this.url + '/user/otherexam/'+id, {withCredentials: true});
+  }
+
+  createUltrassoundExam(exam : UltrassoundExam) {
+    return this.http.post(this.url + '/user/ultrassound/', exam, {withCredentials: true});
+  }
+
+  getUltrassounds(patient_id: Number) {
+    return this.http.get<OtherExam[]>(this.url + '/user/ultrassound/'+patient_id, {withCredentials: true});
   }
 
   deleteExam(id: Number){

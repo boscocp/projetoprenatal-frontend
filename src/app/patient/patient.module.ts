@@ -40,6 +40,9 @@ import { UpdateExamComponent } from './exam/update-exam/update-exam.component';
 import { ListExamComponent } from './exam/list-exam/list-exam.component';
 import { ExamsComponent } from './exam/list-exam/exams/exams.component';
 import {MatCardModule} from '@angular/material/card';
+import { UltrassoundsComponent } from './exam/list-exam/exams/ultrassounds/ultrassounds.component';
+import { UltrassoundComponent } from './exam/create-exam/ultrassound/ultrassound.component';
+import { OtherExamComponent } from './exam/create-exam/other-exam/other-exam.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,10 @@ import {MatCardModule} from '@angular/material/card';
     ListExamComponent,
     ExamsComponent,
     PrenatalIGUpdateDialog,
-    PrenatalDUpdateDialog
+    PrenatalDUpdateDialog,
+    UltrassoundsComponent,
+    UltrassoundComponent,
+    OtherExamComponent
   ],
   imports: [
     CommonModule,
