@@ -27,6 +27,10 @@
               Outras informações: {{ultrassound.other_info}}
             </p>
           </mat-card-content>
+          <div class="example-button-container">
+            <app-ultrassound-update style="margin-right: 10px" (onUpdate)="needReload()" [patientName]="patientName" [ultrassound]="ultrassound" ></app-ultrassound-update>
+            <app-delete-ultrassound (onDelete)="needReload()" [id]="ultrassound?.id!"></app-delete-ultrassound>
+          </div>
           </mat-card>
           <br>
       </div>

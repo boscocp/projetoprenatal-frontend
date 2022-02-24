@@ -87,6 +87,14 @@ export class PatientService {
     return this.http.get<OtherExam[]>(this.url + '/user/ultrassound/'+patient_id, {withCredentials: true});
   }
 
+  deleteUltrassoundExam(id: Number){
+    return this.http.delete(this.url + '/user/ultrassound/'+id, {withCredentials: true});
+  }
+
+  updateUltrassoundExam(exam: UltrassoundExam) {
+    return this.http.put(this.url + '/user/ultrassound/'+exam.id, exam, {withCredentials: true});
+  }
+
   deleteExam(id: Number){
     return this.http.delete(this.url + '/user/otherexam/'+id, {withCredentials: true});
   }

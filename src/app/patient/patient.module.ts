@@ -44,6 +44,8 @@ import { UltrassoundsComponent } from './exam/list-exam/exams/ultrassounds/ultra
 import { UltrassoundComponent } from './exam/create-exam/ultrassound/ultrassound.component';
 import { OtherExamComponent } from './exam/create-exam/other-exam/other-exam.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { UltrassoundUpdateComponent } from './exam/update-exam/ultrassound-update/ultrassound-update.component';
+import { DeleteUltrassoundComponent, DeleteUltrassoundExamDialog } from './exam/delete-exam/delete-ultrassound/delete-ultrassound.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,12 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     PrenatalDUpdateDialog,
     UltrassoundsComponent,
     UltrassoundComponent,
-    OtherExamComponent
+    OtherExamComponent,
+    UltrassoundUpdateComponent,
+    DeleteMedicalRecordDialog,
+    DeleteExamComponent,
+    DeleteUltrassoundComponent,
+    DeleteUltrassoundExamDialog
   ],
   imports: [
     CommonModule,
@@ -99,7 +106,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCheckboxModule,
     MatExpansionModule,
     MatCardModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   exports: [
     PatientComponent
